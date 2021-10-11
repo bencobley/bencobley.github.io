@@ -130,7 +130,7 @@
             Show all
           </button>
           <button class="btn" onclick="filterSelection('Masters')">
-            Master's
+            <mark style="background-color: #fec503">Master's</mark>
           </button>
           <button class="btn" onclick="filterSelection('Industry')">
             Industry
@@ -141,18 +141,17 @@
           <button class="btn" onclick="filterSelection('Interaction')">
             Interaction
           </button>
+          <button class="btn" onclick="filterSelection('Mechanical')">
+            Mechanical
+          </button>
           <button class="btn" onclick="filterSelection('Prototyping')">
             Prototyping
           </button>
-          <button class="btn" onclick="filterSelection('Algorithms')">
-            Algorithms
-          </button>
+          <button class="btn" onclick="filterSelection('Code')">Code</button>
           <button class="btn" onclick="filterSelection('CAD')">CAD</button>
-          <!--                <button class="btn" onclick="filterSelection('Web')">Web Dev</button>-->
           <button class="btn" onclick="filterSelection('Product')">
             Product
           </button>
-          <!--                <button class="btn" onclick="filterSelection('Mechanical')">Mechanical</button>-->
         </div>
       </div>
     </nav>
@@ -165,22 +164,28 @@
     <section id="portfolio">
       <div class="container container-content" style="display: none" id="myDiv">
         <div class="row row-0-gutter">
-          <!-- Van-->
-          <!--
-                <div class="column col-0-gutter">
-                    <div class="ot-portfolio-item">
-                        <figure class="effect-bubba">
-                            <img src="img/Covers/Van.png" class="img-responsive lighter" />
-                            <figcaption>
-                                <h2><mark>In progress: Van conversion</mark></h2>
-                                <p>A modular and reversible campervan conversion for a LWB panel van: my year-off megaproject. Writeup coming soon.</p>
-                                <a>Coming soon</a>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                
--->
+          <!-- --------------------------- -->
+          <!-- Van -->
+          <div
+            class="column col-0-gutter Interaction Prototyping CAD Mechanical"
+          >
+            <div class="ot-portfolio-item">
+              <figure class="effect-bubba">
+                <img src="img/Covers/Van.png" class="img-responsive lighter" />
+                <figcaption>
+                  <h2><mark>Campervan conversion</mark></h2>
+                  <p>
+                    A modular and flexible campervan conversion for a LWB panel
+                    van: my year-off megaproject.
+                  </p>
+                  <a href="#" data-toggle="modal" data-target="#Van"
+                    >View more</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
           <!-- OnionBot Overview-->
           <div
             class="
@@ -321,7 +326,7 @@
               col-0-gutter
               Industry
               Mechatronics
-              Algorithms
+              Code
               Interaction
               CAD
               Prototyping
@@ -356,7 +361,7 @@
               column
               col-0-gutter
               Mechatronics
-              Algorithms
+              Code
               CAD
               Prototyping
               Mechanical
@@ -568,7 +573,7 @@
           </div>
 
           <!-- Tetris -->
-          <div class="column col-0-gutter Algorithms">
+          <div class="column col-0-gutter Code">
             <div class="ot-portfolio-item">
               <figure class="effect-bubba">
                 <img
@@ -680,6 +685,190 @@
       </div>
     </div>
 
+    <!-- Van -->
+    <div class="modal fade" id="Van" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-img">
+            <img src="img/Van/Vanheader3.jpg" class="img-responsive" />
+          </div>
+          <div class="modal-body">
+            <h2>Campervan conversion</h2>
+            <h5>
+              Can a no-compromises van build also be flexible and modular?
+              <li>Personal project with two friends during our year off</li>
+              <li>Unique custom designed bed mechanism</li>
+              <li>All DIY: woodwork, metalwork, electrics and plumbing</li>
+            </h5>
+            <div class="modal-works">
+              <span>Interaction</span><span>Mechanical</span><span>CAD</span
+              ><span>Prototyping</span>
+            </div>
+            <h3>Design for Modularity</h3>
+            <div class="row">
+              <div class="col-md-6">
+                <p>Three design goals:</p>
+                <ul>
+                  <li>Four berths and four seats, comfortably.</li>
+                  <li>
+                    Switching from day to night mode should take seconds, not
+                    minutes.
+                  </li>
+                  <li>
+                    We won't get it 100% right first time, so everything should
+                    be removable!
+                  </li>
+                </ul>
+                <p>
+                  We took a different approach to typical van conversions,
+                  opting for an aluminium extrusion frame wrapped in lightweight
+                  plywood. The design was outlined in CAD to calculate exactly
+                  the material required. Sleeping four comfortably meant
+                  thinking outside the box:
+                </p>
+                <img
+                  src="img/Van/bedmechanism.png"
+                  style="padding-bottom: 15px"
+                />
+                <caption>
+                  First-of-its-kind dual-bed system!
+                </caption>
+              </div>
+              <div class="col-md-6">
+                <img src="img/Van/cad.gif" />
+                <caption>
+                  Many CAD iterations.
+                </caption>
+              </div>
+            </div>
+
+            <h3>Custom build</h3>
+            <div class="slickcarousel">
+              <div>
+                <img
+                  src="img/Van/vanback1.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>Wood & cardboard frame for ergonomics testing.</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback2.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>Panelling removed, struts bolted to existing tie-downs.</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback3.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>First layer of composite floor 'sandwich' cut to shape.</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback4.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>Ceiling, lights, vent fans and cabinets installed.</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback5.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>
+                    Floor, walls and water tanks added. Bed frame in progress.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback6.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>Electronics and water going in. Sliding bed in place.</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback7.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>Done! Space for 3-4 bikes...</p>
+                </div>
+              </div>
+              <div>
+                <img
+                  src="img/Van/vanback8.jpg"
+                  class="slickslide"
+                  style="padding: 5px"
+                />
+                <div class="slickcaption">
+                  <p>... or lots of clutter!</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="youtubecontainer">
+                  <iframe
+                    src="https://www.youtube.com/embed/Ocdxqeg01c4"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen
+                    class="youtubevideo"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <img
+                src="img/Van/vanfooter.jpg"
+                style="width: 100%; margin-top: 50px"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- GoogleX -->
     <div class="modal fade" id="GoogleX" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
@@ -707,8 +896,8 @@
               <li>Offered return placement or graduate role</li>
             </h5>
             <div class="modal-works">
-              <span>Industry</span><span>Mechatronics</span
-              ><span>Algorithms</span><span>CAD</span><span>Mechanical</span>
+              <span>Industry</span><span>Mechatronics</span><span>Code</span
+              ><span>CAD</span><span>Mechanical</span>
             </div>
             <h3>Moonshot Intern</h3>
             <div class="row">
@@ -1640,8 +1829,7 @@
             </h5>
 
             <div class="modal-works">
-              <span>Mechatronics</span><span>Interaction</span
-              ><span>Algorithms</span>
+              <span>Mechatronics</span><span>Interaction</span><span>Code</span>
             </div>
             <h3>
               An interactive experience for a wall of interactive experiences
@@ -2159,7 +2347,7 @@ except KeyboardInterrupt:
               </div>
             </div>
 
-            <h3>How to the release energy?</h3>
+            <h3>How to release the energy?</h3>
             <div class="row">
               <div class="col-md-6">
                 <p>
@@ -2648,7 +2836,7 @@ except KeyboardInterrupt:
               <li>Built in Python</li>
               <li>3rd place in algorithm competition</li>
             </h5>
-            <div class="modal-works"><span>Algorithms</span></div>
+            <div class="modal-works"><span>Code</span></div>
             <h3>The Tetriling Puzzle</h3>
             <div class="row">
               <div class="col-md-6">
@@ -3005,7 +3193,7 @@ def get_path(x, y, score_difference, target, solution, Node, path=None):
               <li>First year group project: RoboChicken</li>
             </h5>
             <div class="modal-works">
-              <span>Mechatronics</span><span>Algorithms</span>
+              <span>Mechatronics</span><span>Code</span>
             </div>
 
             <h3>Dancing Segway robot</h3>
