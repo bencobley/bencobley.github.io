@@ -126,7 +126,7 @@
           style="margin-top: 40px; margin-left: 1px"
         >
           <!--<p style="margin-bottom: 5px">FILTER:</p>-->
-          <button class="btn active" onclick="filterSelection('all')">
+          <button class="btn active" onclick="filterSelection('Non')">
             Show all
           </button>
           <button class="btn" onclick="filterSelection('Masters')">
@@ -138,8 +138,11 @@
           <button class="btn" onclick="filterSelection('Mechatronics')">
             Mechatronics
           </button>
-          <button class="btn" onclick="filterSelection('Interaction')">
+          <!-- <button class="btn" onclick="filterSelection('Interaction')">
             Interaction
+          </button> -->
+          <button class="btn" onclick="filterSelection('Product')">
+            Product
           </button>
           <button class="btn" onclick="filterSelection('Mechanical')">
             Mechanical
@@ -149,8 +152,8 @@
           </button>
           <button class="btn" onclick="filterSelection('Code')">Code</button>
           <button class="btn" onclick="filterSelection('CAD')">CAD</button>
-          <button class="btn" onclick="filterSelection('Product')">
-            Product
+          <button class="btn" onclick="filterSelection('Arxived')">
+            Archived
           </button>
         </div>
       </div>
@@ -167,7 +170,15 @@
           <!-- --------------------------- -->
           <!-- Van -->
           <div
-            class="column col-0-gutter Interaction Prototyping CAD Mechanical"
+            class="
+              column
+              col-0-gutter
+              Non
+              Interaction
+              Prototyping
+              CAD
+              Mechanical
+            "
           >
             <div class="ot-portfolio-item">
               <figure class="effect-bubba">
@@ -191,8 +202,10 @@
             class="
               column
               col-0-gutter
+              Non
               Masters
               Mechatronics
+              Product
               Interaction
               Prototyping
               CAD
@@ -226,8 +239,10 @@
             class="
               column
               col-0-gutter
+              Non
               Masters
               Mechatronics
+              Product
               Interaction
               Prototyping
               CAD
@@ -259,8 +274,10 @@
             class="
               column
               col-0-gutter
+              Non
               Masters
               Mechatronics
+              Product
               Interaction
               Prototyping
               CAD
@@ -291,8 +308,10 @@
             class="
               column
               col-0-gutter
+              Non
               Masters
               Mechatronics
+              Product
               Interaction
               Prototyping
               CAD
@@ -324,6 +343,7 @@
             class="
               column
               col-0-gutter
+              Non
               Industry
               Mechatronics
               Code
@@ -360,6 +380,7 @@
             class="
               column
               col-0-gutter
+              Non
               Mechatronics
               Code
               CAD
@@ -377,9 +398,31 @@
                   <h2><mark>Robotic Medical Percussion</mark></h2>
                   <p>
                     The first attempt to quantify and automate the medical
-                    percussion diagnostic procedure
+                    percussion diagnostic procedure.
                   </p>
                   <a href="#" data-toggle="modal" data-target="#Percussion"
+                    >View more</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- LettuceLabs -->
+          <div class="column col-0-gutter Non Product Interaction">
+            <div class="ot-portfolio-item">
+              <figure class="effect-bubba">
+                <img
+                  src="img/Covers/lettucelabscover.png"
+                  class="img-responsive"
+                />
+                <figcaption>
+                  <h2><mark>Food Waste Design Challenge</mark></h2>
+                  <p>
+                    How might we help homes reduce their food waste by 10X? A
+                    speculative design project.
+                  </p>
+                  <a href="#" data-toggle="modal" data-target="#LettuceLabs"
                     >View more</a
                   >
                 </figcaption>
@@ -392,6 +435,7 @@
             class="
               column
               col-0-gutter
+              Non
               Industry
               CAD
               Mechanical
@@ -417,11 +461,33 @@
             </div>
           </div>
 
+          <!-- Inky -->
+          <div class="column col-0-gutter Non CAD Prototyping">
+            <div class="ot-portfolio-item">
+              <figure class="effect-bubba">
+                <img src="img/Covers/inky2.png" class="img-responsive" />
+                <figcaption>
+                  <h2><mark>Inky Spotify</mark></h2>
+                  <p>
+                    Celebrating album artwork with an e-ink display that updates
+                    based on your Spotify.
+                  </p>
+                  <a
+                    href="https://github.com/tomcobley/inky-spotify"
+                    data-toggle="modal"
+                    >View more</a
+                  >
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
           <!-- Kaufmann -->
           <div
             class="
               column
               col-0-gutter
+              Non
               Mechatronics
               Interaction
               CAD
@@ -436,7 +502,7 @@
                   class="img-responsive"
                 />
                 <figcaption>
-                  <h2><mark>Kaufmann Tools</mark></h2>
+                  <h2><mark>Powerful education</mark></h2>
                   <p>
                     Power tools reimagined for education. Putting DIY tools in
                     the hands of young people, an invaluable life skill.
@@ -454,7 +520,7 @@
             class="
               column
               col-0-gutter
-              Product
+              Archived
               Interaction
               Systemdesign
               Prototyping
@@ -482,7 +548,7 @@
           </div>
 
           <!-- Gizmo -->
-          <div class="column col-0-gutter Mechatronics Interaction">
+          <div class="column col-0-gutter Arxived Mechatronics Interaction">
             <div class="ot-portfolio-item">
               <figure class="effect-bubba">
                 <img src="img/Covers/gizmocover.png" class="img-responsive" />
@@ -502,7 +568,7 @@
           </div>
 
           <!-- PiCam -->
-          <div class="column col-0-gutter Product Interaction">
+          <div class="column col-0-gutter Arxived Interaction">
             <div class="ot-portfolio-item">
               <figure class="effect-bubba">
                 <img src="img/Covers/picamcover3.png" class="img-responsive" />
@@ -521,7 +587,7 @@
           </div>
 
           <!-- Mars -->
-          <div class="column col-0-gutter Mechatronics CAD Mechanical">
+          <div class="column col-0-gutter Non Mechatronics CAD Mechanical">
             <div class="ot-portfolio-item">
               <figure class="effect-bubba">
                 <img src="img/Covers/marscover2.png" class="img-responsive" />
@@ -544,10 +610,10 @@
             class="
               column
               col-0-gutter
+              Non
               Industry
               CAD
               Mechanical
-              Product
               Interaction
               Prototyping
             "
@@ -573,7 +639,7 @@
           </div>
 
           <!-- Tetris -->
-          <div class="column col-0-gutter Code">
+          <div class="column col-0-gutter Arxived Code">
             <div class="ot-portfolio-item">
               <figure class="effect-bubba">
                 <img
@@ -1102,6 +1168,102 @@
                   for my contribution to the inital device. View the paper
                   <a
                     href="https://www.imperial.ac.uk/media/imperial-college/web-training/engineering/training-documents/Paper_3.pdf"
+                    >here.</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LettuceLabs -->
+    <div class="modal fade" id="LettuceLabs" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-img">
+            <img src="img/LettuceLabs/show.jpg" class="img-responsive" />
+          </div>
+          <div class="modal-body">
+            <h2>Lettuce Labs</h2>
+            <h5>
+              How might we help homes reduce their food waste by 10X?
+              <li>Third year group project.</li>
+              <li>
+                Big problems require big solutions. | Goal: A scalable system
+                that could reduce domestic food waste by 10x
+              </li>
+              <li>
+                My focus: trend analysis, technological curiosity and system
+                design. Based on emerging technologies.
+              </li>
+            </h5>
+            <div class="modal-works">
+              <span>Product</span><span>Interaction</span><span>System</span>
+            </div>
+
+            <h3>
+              Brief: "Design a moonshot solution to disrupt the future of our
+              food"
+            </h3>
+
+            <p>
+              Lettuce Labs outlines a vision for the Connected Kitchen of 2030
+              and how it might reduce consumer food waste by a factor of 10. We
+              forsee a future in which a suite of IOT kitchen devices feeding
+              data to an Alexa-style virtual assistant will dramatically reduce
+              food waste due to human error - while making the shopping cooking
+              and grocery shopping experience a breeze. Food that does make it
+              to the (smart) bin will be connected to underutilised Biogas
+              plants across the country.
+            </p>
+
+            <h3>
+              One system tackling food waste through both prevention and
+              recovery
+            </h3>
+
+            <p>
+              The Lettuce Labs connected system enables you to reduce the impact
+              of your waste through the power of data. <br /><strong
+                >Prevention: </strong
+              >AI powered delivery of the right portions of ingredients, based
+              on your habits. Avoid overpurchasing and always use ingredients in
+              time with help from a virtual assistant. <br /><strong
+                >Recovery:
+              </strong>
+              An effortless service connecting your biodegradable bin boxes with
+              under-utilised biogas plants across the UK.
+            </p>
+
+            <h3>Lettuce Labs in the Press</h3>
+            <div>
+              <img
+                src="img/LettuceLabs/linkedin.png"
+                style="width: 500px"
+                class="slickslide"
+              />
+              <div class="slickcaption">
+                <p>
+                  Check out the article
+                  <a
+                    href="https://www.standard.co.uk/tech/food-waste-virtual-chef-kitchen-a4142036.html"
                     >here.</a
                   >
                 </p>
