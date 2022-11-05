@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "space-grotesk";
+  src: url("SpaceGrotesk-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "space-mono";
+  src: url("SpaceMono-Regular.ttf") format("truetype");
+}
+
+/* || GENERAL STYLES */
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+:root {
+  --international-orange: #ff4f00;
+  --dodger-blue: #0197f6;
+  --space-cadet: #2b2d42;
+  --maximum-yellow: #f8f32b;
+  --very-white: #ffffff;
+  --very-black: #000000;
+}
+
+body {
+  padding: 20px;
+  background: var(--very-white);
+  text-align: center;
+}
+
+.headline {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: "space-grotesk", sans-serif;
+  font-size: 20px;
+  font-size: max(15px, min(4.5vw, 3.5vh));
+  line-height: 150%;
+  width: min(90vw, 1530px);
+}
+
+a {
+  font-family: "space-mono", monospace;
+  color: var(--international-orange);
+  text-decoration: underline;
+}
+
+a::after {
+  content: ">>";
+}
