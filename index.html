@@ -6,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="splide/splide.min.css">
   </head>
   <body>
     <script src="index.js"></script>
-    <div class="headline">
+    <script src="splide/splide.min.js"></script>
+    <!-- <div class="headline">
       Hey! I’m Ben. I am a technologist, engineer, & designer. I am currently
       working on game-changing tech for the recycling industry @
       <a>TrueCircle AI</a>. Before that, I studied at Imperial College London,
@@ -20,8 +22,29 @@
       love being outdoors and <a>building things with friends</a>. Interested in
       building new things / making a positive impact on earth?
       <a>Say hello!</a>.
-    </div>
+    </div> -->
 
-    <p>test</p>
+    <!-- <div class="splide" id="#slider1" role="group" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">test<img src="img/TrueCircle_1.png"></li>
+                  <li class="splide__slide">test<img src="img/TrueCircle_2.png"></li>
+              </ul>
+        </div>
+      </div> -->
+
+      <section id="image-carousel" class="splide">
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">
+                      <img src="img/TrueCircle_1.png">
+                  </li>
+                  <li class="splide__slide">
+                      <img src="img/TrueCircle_2.png">
+                  </li>
+              </ul>
+        </div>
+      </section>
+
   </body>
 </html>
