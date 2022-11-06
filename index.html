@@ -6,45 +6,155 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>HTML 5 Boilerplate</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="splide/splide.min.css">
+    <link rel="stylesheet" href="splide/splide.min.css" />
   </head>
   <body>
     <script src="index.js"></script>
     <script src="splide/splide.min.js"></script>
-    <!-- <div class="headline">
-      Hey! I’m Ben. I am a technologist, engineer, & designer. I am currently
-      working on game-changing tech for the recycling industry @
-      <a>TrueCircle AI</a>. Before that, I studied at Imperial College London,
-      where, I developed <a>cooking robots</a> and a
-      <a>medical diagnosis device</a> [amongst other things!]. During the Design
-      Engineering degree, I interned at Google X, Dyson, and Brompton. I got to
-      work on some <a>great projects with great people</a>. In my free time, I
-      love being outdoors and <a>building things with friends</a>. Interested in
-      building new things / making a positive impact on earth?
-      <a>Say hello!</a>.
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <div class="wrapper" style="height: 100vh">
+      <div class="Headline">
+        Hey! I’m Ben. I am a technologist, engineer, & designer. I am currently
+        working on game-changing tech for the recycling industry @
+        <a href="#mycol"> TrueCircle AI</a>. Before that, I studied at Imperial College London,
+        where, I developed <a>cooking robots</a> and a
+        <a>medical diagnosis device</a> [amongst other things!]. During the
+        Design Engineering degree, I interned at Google X, Dyson, and Brompton.
+        I got to work on some <a>great projects with great people</a>. In my
+        free time, I love being outdoors and
+        <a>building things with friends</a>. Interested in building new things /
+        making a positive impact on earth? <a>Say hello!</a>.
+      </div>
+    </div>
+
+    <div class="wrapper" id="mywrap">
+      <div class="left-column">
+        <div class="left-div">
+          <div class="Date">2021+</div>
+          <div class="Duration">1 Year+ full-time</div>
+          <div class="Location">TrueCircle HQ, London</div>
+          <div class="Thanks">PH et al.</div>
+        </div>
+      </div>
+      <div class="right-column" id="mycol">
+        <div class="right-div">
+          <div class="Title">TrueCircle AI</div>
+
+          <div class="Text">
+            TrueCircle AI is a climate-tech startup developing ground-breaking
+            computer vision hardware that enables recycling facilities to
+            recover valuable material more effectively and sell material more
+            efficiently. We retrofit industrial cameras above conveyor belts to
+            capture continuous footage of material streams. Our state-of-the-art
+            model calculates composition by weight in real-time, to a 95%+
+            accuracy. We’ve built industry-leading dashboards that empower
+            facilites to run more efficiently, preventing recyclable material
+            from going to landfill.
+
+            <div id="image-carousel" class="splide">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="img/TrueCircle_1.png" />
+                  </li>
+                  <li class="splide__slide">
+                    <img src="img/TrueCircle_2.png" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper" id="mywrap2">
+      <div class="left-column">
+        <div class="left-div">
+          <div class="Date">2021+</div>
+          <div class="Duration">1 Year+ full-time</div>
+          <div class="Location">TrueCircle HQ, London</div>
+          <div class="Thanks">PH et al.</div>
+        </div>
+      </div>
+      <div class="right-column" id="mycol2">
+        <div class="right-div">
+          <div class="Title">TrueCircle AI</div>
+
+          <div class="Text">
+            Hey! I’m Ben. I am a technologist, engineer, & designer. I am
+            currently working on game-changing tech for the recycling industry @
+            <a>TrueCircle AI</a>. Before that, I studied at Imperial College
+            London, where, I developed <a>cooking robots</a> and a
+            <a>medical diagnosis device</a> [amongst other things!]. During the
+            Design Engineering degree, I interned at Google X, Dyson, and
+            Brompton. I got to work on some
+            <a>great projects with great people</a>. In my free time, I love
+            being outdoors and <a>building things with friends</a>. Interested
+            in building new things / making a positive impact on earth?
+            <a>Say hello!</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrapper" id="mywrap3">
+      <div class="left-column">
+        <div class="left-div">
+          <div class="Date">2021+</div>
+          <div class="Duration">1 Year+ full-time</div>
+          <div class="Location">TrueCircle HQ, London</div>
+          <div class="Thanks">PH et al.</div>
+        </div>
+      </div>
+      <div class="right-column" id="mycol3">
+        <div class="right-div">
+          <div class="Title">TrueCircle AI</div>
+
+          <div class="Text">
+            Hey! I’m Ben. I am a technologist, engineer, & designer. I am
+            currently working on game-changing tech for the recycling industry @
+            <a>TrueCircle AI</a>. Before that, I studied at Imperial College
+            London, where, I developed <a>cooking robots</a> and a
+            <a>medical diagnosis device</a> [amongst other things!]. During the
+            Design Engineering degree, I interned at Google X, Dyson, and
+            Brompton. I got to work on some
+            <a>great projects with great people</a>. In my free time, I love
+            being outdoors and <a>building things with friends</a>. Interested
+            in building new things / making a positive impact on earth?
+            <a>Say hello!</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="wrapper">
+      <div class="left-column">
+        <div class="Date">2021+</div>
+        <div class="Duration">1 Year+ full-time</div>
+        <div class="Location">TrueCircle HQ, London</div>
+        <div class="Thanks">PH et al.</div>
+      </div>
+
+      <div class="col-center">
+        <div class="Text">
+          Hey! I’m Ben. I am a technologist, engineer, & designer. I am
+          currently working on game-changing tech for the recycling industry @
+          <a>TrueCircle AI</a>. Before that, I studied at Imperial College
+          London, where, I developed <a>cooking robots</a> and a
+          <a>medical diagnosis device</a> [amongst other things!]. During the
+          Design Engineering degree, I interned at Google X, Dyson, and
+          Brompton. I got to work on some
+          <a>great projects with great people</a>. In my free time, I love being
+          outdoors and <a>building things with friends</a>. Interested in
+          building new things / making a positive impact on earth?
+        </div>
+      </div>
     </div> -->
 
-    <!-- <div class="splide" id="#slider1" role="group" aria-label="Splide Basic HTML Example">
-        <div class="splide__track">
-              <ul class="splide__list">
-                  <li class="splide__slide">test<img src="img/TrueCircle_1.png"></li>
-                  <li class="splide__slide">test<img src="img/TrueCircle_2.png"></li>
-              </ul>
-        </div>
-      </div> -->
+    <!-- <div class="Theme">Employment</div> -->
 
-      <section id="image-carousel" class="splide">
-        <div class="splide__track">
-              <ul class="splide__list">
-                  <li class="splide__slide">
-                      <img src="img/TrueCircle_1.png">
-                  </li>
-                  <li class="splide__slide">
-                      <img src="img/TrueCircle_2.png">
-                  </li>
-              </ul>
-        </div>
-      </section>
-
+    <!-- <div class="Highlights"></div> -->
   </body>
 </html>
