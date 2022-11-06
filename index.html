@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>HTML 5 Boilerplate</title>
+    <title>Ben Cobley</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="splide/splide.min.css" />
   </head>
@@ -13,12 +13,16 @@
     <script src="splide/splide.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-    <my-section id="dummy-section0">
-      <my-homepage id="dummy-column0">
-        <a class="Me" href="https://www.linkedin.com/in/bennetcobley/"
-          ><img src="img/me.png"
-        /></a>
-        <my-text>
+    <timeline-section id="timeline-section0">
+      <timeline-homepage id="timeline-column0">
+        <timeline-me
+          ><a
+            href="https://www.linkedin.com/in/bennetcobley/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="img/me.png" /></a
+        ></timeline-me>
+        <timeline-text>
           Hey! I’m Ben. I am a technologist, engineer, & designer. I am
           currently working on game-changing tech for the recycling industry @<a
             >TrueCircle AI</a
@@ -31,32 +35,32 @@
           outdoors and <a>building things with friends</a>. Interested in
           building new things / making a positive impact on earth?
           <a>Say hello!</a>.
-        </my-text>
-        <a href="#dummy-section1" class="Arrow"></a>
-      </my-homepage>
-    </my-section>
+        </timeline-text>
+        <a href="#timeline-section1" class="Arrow"></a>
+      </timeline-homepage>
+    </timeline-section>
 
-    <my-section id="dummy-section1">
-      <my-left-column>
-        <my-left-div>
-          <my-short-title>TrueCircle AI</my-short-title>
-          <my-date>2021+</my-date>
-          <my-subtitle>Design Engineer @ Early-Stage Startup</my-subtitle>
-          <my-highlights>
+    <timeline-section id="timeline-section1">
+      <timeline-left-column>
+        <timeline-left-div>
+          <timeline-short-title>TrueCircle AI</timeline-short-title>
+          <timeline-date>2021+</timeline-date>
+          <timeline-subtitle>Design Engineer @ Early-Stage Startup</timeline-subtitle>
+          <timeline-highlights>
             <ul>
               <li>Launched MVP product in UK facility</li>
               <li>Developed 10x more reliable hardware</li>
               <li>Implemented roadmap to outsource site work</li>
-            </ul></my-highlights
+            </ul></timeline-highlights
           >
-          <my-duration>1 Year+ full-time</my-duration>
-          <my-location>TrueCircle HQ, London</my-location>
-          <my-thanks>PH et al.</my-thanks>
-        </my-left-div>
-      </my-left-column>
-      <my-right-column id="dummy-column1">
-        <my-right-div>
-          <my-title>TrueCircle AI</my-title>
+          <timeline-duration>1 Year+ full-time</timeline-duration>
+          <timeline-location>TrueCircle HQ, London</timeline-location>
+          <timeline-thanks>PH et al.</timeline-thanks>
+        </timeline-left-div>
+      </timeline-left-column>
+      <timeline-right-column id="timeline-column1">
+        <timeline-right-div>
+          <timeline-title>TrueCircle AI</timeline-title>
           <div id="carousel0" class="splide">
             <div class="splide__track">
               <ul class="splide__list">
@@ -69,7 +73,7 @@
               </ul>
             </div>
           </div>
-          <my-text>
+          <timeline-text>
             <a href="https://www.truecircle.ai/">TrueCircle AI</a> is a
             climate-tech startup developing ground-breaking computer vision
             hardware that enables recycling facilities to recover valuable
@@ -80,7 +84,7 @@
             We’ve built industry-leading dashboards that empower facilites to
             run more efficiently, preventing recyclable material from going to
             landfill.
-          </my-text>
+          </timeline-text>
           <div id="carousel1" class="splide">
             <div class="splide__track">
               <ul class="splide__list">
@@ -93,7 +97,7 @@
               </ul>
             </div>
           </div>
-          <my-text>
+          <timeline-text>
             TrueCircle partnered with UK facilites to investigate data-driven
             optimisation of recycling processes. A typical TrueCircle AI user is
             a Plant Manager who is preocupied with keeping unreliable equipment
@@ -103,7 +107,7 @@
             material. The existing players in the market couldn't offer a
             solution accurate enough to justify their time-consuming and costly
             setup process.
-          </my-text>
+          </timeline-text>
           <div id="carousel2" class="splide">
             <div class="splide__track">
               <ul class="splide__list">
@@ -116,7 +120,7 @@
               </ul>
             </div>
           </div>
-          <my-text>
+          <timeline-text>
             I joined as TrueCircle's first full-time hardware engineer. Over the
             past year+, launched a product that can be retrofit in a few hours,
             with zero up-front hardware cost for our customers. We send instant
@@ -126,7 +130,7 @@
             per tonne. TrueCircle has also launched Trade, an online marketplace
             that allows Plant Managers to buy and sell material verified by
             purity data from our AI vision system, for the first time.
-          </my-text>
+          </timeline-text>
           <div id="carousel3" class="splide">
             <div class="splide__track">
               <ul class="splide__list">
@@ -139,7 +143,7 @@
               </ul>
             </div>
           </div>
-          <my-text>
+          <timeline-text>
             My responsibilities: Launched TrueCircle’s MVP hardware and led
             installation of our initial pilot system at a UK recycling facility.
             Outlined a roadmap for reducing failure rate. Implemented a strategy
@@ -149,9 +153,9 @@
             processes to hand over system installations to a 3rd-party supplier,
             proving product scalability; a key requirement for TrueCircle’s
             upcoming Series A.
-          </my-text>
-        </my-right-div>
-      </my-right-column>
-    </my-section>
+          </timeline-text>
+        </timeline-right-div>
+      </timeline-right-column>
+    </timeline-section>
   </body>
 </html>

@@ -5,22 +5,22 @@ document.addEventListener("DOMContentLoaded", function () {
     new Splide(elms[i]).mount();
   }
 
-  document.getElementById("dummy-section0").style.height = String(
+  document.getElementById("timeline-section0").style.height = String(
     Math.max(
-      document.getElementById("dummy-column0").offsetHeight,
+      document.getElementById("timeline-column0").offsetHeight,
       window.innerHeight
     ) + "px"
   );
 
   if (window.matchMedia("(min-width: 500px)").matches) {
-    document.getElementById("dummy-section1").style.height =
-      String(document.getElementById("dummy-column1").offsetHeight) + "px";
+    document.getElementById("timeline-section1").style.height =
+      String(document.getElementById("timeline-column1").offsetHeight) + "px";
 
-    document.getElementById("dummy-section2").style.height =
-      String(document.getElementById("dummy-column2").offsetHeight) + "px";
+    document.getElementById("timeline-section2").style.height =
+      String(document.getElementById("timeline-column2").offsetHeight) + "px";
 
-    document.getElementById("dummy-section3").style.height =
-      String(document.getElementById("dummy-column3").offsetHeight) + "px";
+    document.getElementById("timeline-section3").style.height =
+      String(document.getElementById("timeline-column3").offsetHeight) + "px";
   } else {
     // console.log("Screen less than 500px");
   }

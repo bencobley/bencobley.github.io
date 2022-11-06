@@ -104,7 +104,7 @@ ul {
   margin-left: 2rem;
 }
 
-my-section {
+timeline-section {
   display: block;
   position: relative;
   contain: content;
@@ -114,14 +114,14 @@ my-section {
   /* font-size: 0; */
 }
 
-.Me img {
+timeline-me img {
   height: 4rem;
   border-radius: 50%;
   margin-top: 5rem;
   margin-bottom: 1rem;
 }
 
-my-homepage {
+timeline-homepage {
   display: block;
   font-family: "space-grotesk", sans-serif;
 }
@@ -138,45 +138,45 @@ my-homepage {
   transform: rotate(135deg);
 }
 
-my-left-column {
+timeline-left-column {
   display: block;
 }
 
-my-left-div {
+timeline-left-div {
   display: block;
   /* font-size: 1rem; */
   margin-bottom: 2rem;
 }
 
-my-left-div * {
+timeline-left-div * {
   margin-bottom: 0.5rem;
 }
 
-my-left-div ul {
+timeline-left-div ul {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
 
-my-right-column {
+timeline-right-column {
   display: block;
 }
 
-my-right-div {
+timeline-right-div {
   display: block;
   /* font-size: 1rem; */
   margin-bottom: 2rem;
 }
 
-my-right-div * {
+timeline-right-div * {
   margin-bottom: 2rem;
 }
 
-my-theme {
+timeline-theme {
   display: block;
   font-family: "space-mono-bold", monospace;
 }
 
-my-title {
+timeline-title {
   display: none;
   font-family: "space-mono-bold", monospace;
   color: var(--international-orange);
@@ -184,7 +184,7 @@ my-title {
   margin-bottom: 2rem;
 }
 
-my-short-title {
+timeline-short-title {
   display: block;
   font-family: "space-mono-bold", monospace;
   color: var(--international-orange);
@@ -192,57 +192,57 @@ my-short-title {
   margin-top: 2rem;
 }
 
-my-date {
+timeline-date {
   display: block;
   font-family: "space-mono-bold", monospace;
   font-size: 2rem;
 }
 
-my-subtitle {
+timeline-subtitle {
   display: block;
   font-size: 1.3rem;
   font-family: "space-grotesk-bold", sans-serif;
 }
 
-my-duration {
+timeline-duration {
   display: block;
   font-family: "space-grotesk-bold", sans-serif;
 }
 
-my-location {
+timeline-location {
   display: block;
   font-family: "space-grotesk-bold", sans-serif;
 }
 
-my-location::before {
+timeline-location::before {
   content: "@ ";
 }
 
-my-thanks {
+timeline-thanks {
   display: block;
   font-family: "space-grotesk-bold", monospace;
 }
 
-my-thanks::before {
+timeline-thanks::before {
   content: "With thanks to ";
 }
 
-my-highlights {
+timeline-highlights {
   font-family: "hyperlegible", sans-serif;
   display: block;
 }
 
-my-highlights::before {
+timeline-highlights::before {
   font-family: "space-grotesk-bold", sans-serif;
   content: "Highlights:";
 }
 
-my-text {
+timeline-text {
   display: block;
   line-height: 150%;
 }
 
-my-text a::after {
+timeline-text a::after {
   content: ">>";
 }
 
@@ -261,34 +261,34 @@ my-text a::after {
 /* DESKTOP */
 
 @media only screen and (min-width: 768px) {
-  my-title {
+  timeline-title {
     display: block;
     font-size: 3.5rem;
   }
 
-  my-short-title {
+  timeline-short-title {
     display: none;
     font-size: 3.5rem;
   }
 
-  my-homepage {
+  timeline-homepage {
     display: block;
     font-size: 1.4rem;
   }
 
-  my-date {
+  timeline-date {
     display: block;
     font-size: 3.5rem;
     margin-bottom: 2rem;
   }
 
-  my-left-column {
+  timeline-left-column {
     display: block;
     width: 25%;
     height: 100%;
   }
 
-  my-left-div {
+  timeline-left-div {
     margin-bottom: 1rem;
     position: -webkit-sticky;
     position: sticky;
@@ -296,10 +296,10 @@ my-text a::after {
     left: 0;
   }
 
-  my-left-div * {
+  timeline-left-div * {
   }
 
-  my-right-column {
+  timeline-right-column {
     display: block;
     width: 65%;
     position: absolute;
@@ -307,9 +307,9 @@ my-text a::after {
     left: 35%;
   }
 
-  my-right-div {
+  timeline-right-div {
   }
 
-  my-right-div * {
+  timeline-right-div * {
   }
 }
