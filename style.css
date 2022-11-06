@@ -1,27 +1,54 @@
 @font-face {
   font-family: "space-grotesk";
-  src: url("SpaceGrotesk-Regular.ttf") format("truetype");
+  src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "space-grotesk-bold";
-  src: url("SpaceGrotesk-Bold.ttf") format("truetype");
+  src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "space-mono";
-  src: url("SpaceMono-Regular.ttf") format("truetype");
+  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "space-mono-bold";
-  src: url("SpaceMono-Bold.ttf") format("truetype");
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "space-mono-italic";
-  src: url("SpaceMono-Italic.ttf") format("truetype");
+  src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "space-mono-bold-italic";
+  src: url("fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "hyperlegible-italic";
+  src: url("fonts/AtkinsonHyperlegible.ttf-Italic") format("truetype");
+}
+
+@font-face {
+  font-family: "hyperlegible-bold";
+  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "hyperlegible-bold-italic";
+  src: url("fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
+}
+
+
 
 * {
   padding: 0;
@@ -43,10 +70,21 @@ html {
 }
 
 body {
-  /* padding: 20px; */
+  padding: 30px;
   font-family: "space-grotesk", sans-serif;
   background: var(--very-white);
-
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 
 ::selection {
@@ -77,15 +115,21 @@ img {
 .left-column {
   width: 30%;
   height: 100%;
+  font-size: 25px;
 }
 
 .left-div {
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   padding: 50px;
 
+}
+
+.left-div > * {
+  display: block;
+  margin-bottom: 10px;
 }
 
 .right-column {
@@ -103,7 +147,7 @@ img {
 
 .right-div > * {
   display: block;
-  margin-bottom: 30px 0;
+  margin-bottom: 30px;
 }
 
 /* @media only screen and (min-width: 768px) {
@@ -124,7 +168,7 @@ img {
   font-size: 20px;
   font-size: max(15px, min(4.5vw, 3.5vh));
   line-height: 150%;
-  width: min(90vw, 1530px);
+  width: min(90vw, 1200px);
   text-align: center;
 }
 
@@ -143,19 +187,25 @@ img {
   font-family: "space-mono-bold", monospace;
   font-size: 20px;
   font-size: max(15px, min(10vw, 10vh));
+  margin-bottom: 30px;
 }
+
+.Subtitle {
+  font-family: "space-grotesk-bold", sans-serif;
+}
+
 
 .Duration {
-  font-size: 20px;
+  font-family: "space-grotesk-bold", sans-serif;
 }
 
-.Duration::before {
+/* .Duration::before {
   font-family: "space-grotesk-bold", sans-serif;
   content: "Duration: ";
-}
+} */
 
 .Location {
-  font-size: 20px;
+  font-family: "space-grotesk-bold", sans-serif;
 }
 
 .Location::before {
@@ -163,27 +213,24 @@ img {
 }
 
 .Thanks {
-  font-family: "space-mono-italic", monospace;
-  font-size: 20px;
+  font-family: "space-mono-bold-italic", monospace;
 }
 
 .Thanks::before {
-  content: "With thanks to: ";
+  content: "Thanks to: ";
 }
 
 .Highlights {
-  font-size: 20px;
 }
 
 .Text {
-  font-size: max(10px, min(3vw, 3vh));
+  font-family: "hyperlegible", sans-serif;
+  font-size: 25px;
   line-height: 150%;
-  
-
 }
 
 .splide {
-  max-width: 80%;
+  max-width: 100%;
   margin: 50px;
   margin-left: auto;
   margin-right: auto;
