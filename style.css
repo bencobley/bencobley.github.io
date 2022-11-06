@@ -104,7 +104,8 @@ ul {
   margin-left: 2rem;
 }
 
-section {
+my-section {
+  display: block;
   position: relative;
   contain: content;
   margin-bottom: 3rem;
@@ -120,7 +121,8 @@ section {
   margin-bottom: 1rem;
 }
 
-.Headline {
+my-homepage {
+  display: block;
   font-family: "space-grotesk", sans-serif;
 }
 
@@ -136,7 +138,7 @@ section {
   transform: rotate(135deg);
 }
 
-.left-column {
+my-left-column {
 }
 
 .left-div {
@@ -254,7 +256,7 @@ section {
     font-size: 3.5rem;
   }
 
-  .Headline {
+  my-homepage {
     font-size: 1.4rem;
   }
 
@@ -263,7 +265,8 @@ section {
     margin-bottom: 2rem;
   }
 
-  .left-column {
+  my-left-column {
+    display: block;
     width: 25%;
     height: 100%;
   }
@@ -280,7 +283,8 @@ section {
   .left-div > * {
   }
 
-  .right-column {
+  my-right-column {
+    display: block;
     /* font-size: 1rem; */
     width: 65%;
     position: absolute;
