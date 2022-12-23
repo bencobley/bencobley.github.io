@@ -163,12 +163,10 @@ timeline-right-column {
 
 timeline-right-div {
   display: block;
-  /* font-size: 1rem; */
   margin-bottom: 2rem;
 }
 
 timeline-right-div * {
-  margin-bottom: 2rem;
 }
 
 timeline-theme {
@@ -240,6 +238,8 @@ timeline-highlights::before {
 timeline-text {
   display: block;
   line-height: 150%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 timeline-text a::after {
