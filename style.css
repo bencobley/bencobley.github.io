@@ -1,11 +1,31 @@
 @font-face {
   font-family: "space-grotesk";
+  src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "space-grotesk";
   src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "space-grotesk-bold";
-  src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-family: "space-mono";
+  src: url("fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic, oblique;
+}
+
+@font-face {
+  font-family: "space-mono";
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "space-mono";
+  src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-style: italic, oblique;
 }
 
 @font-face {
@@ -14,38 +34,27 @@
 }
 
 @font-face {
-  font-family: "space-mono-bold";
-  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-family: "hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic, oblique;
 }
 
 @font-face {
-  font-family: "space-mono-italic";
-  src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-family: "hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+  font-weight: bold;
 }
 
 @font-face {
-  font-family: "space-mono-bold-italic";
-  src: url("fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-family: "hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible.ttf-Italic") format("truetype");
+  font-style: italic, oblique;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "hyperlegible-italic";
-  src: url("fonts/AtkinsonHyperlegible.ttf-Italic") format("truetype");
-}
-
-@font-face {
-  font-family: "hyperlegible-bold";
-  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "hyperlegible-bold-italic";
-  src: url("fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
 }
 
 * {
@@ -74,6 +83,7 @@ body {
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  line-height: 1.6;
 }
 
 @keyframes fadeInAnimation {
@@ -94,10 +104,20 @@ a {
   font-family: "space-mono", monospace;
   color: var(--international-orange);
   text-decoration: underline;
+  letter-spacing: -0.05rem;
 }
 
 img {
   border-radius: 2rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.splide {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 ul {
@@ -115,7 +135,8 @@ timeline-section {
 }
 
 timeline-me img {
-  height: 4rem;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
   margin-top: 5rem;
   margin-bottom: 1rem;
@@ -126,9 +147,22 @@ timeline-homepage {
   font-family: "space-grotesk", sans-serif;
 }
 
+timeline-footer {
+  display: block;
+  text-align: end;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
+  margin-top: 10rem;
+}
+
+timeline-footer a {
+  font-family: "space-mono", monospace;
+  font-weight: bold;
+}
+
 .Arrow {
   position: relative;
-  top: 2rem;
+  top: 0rem;
   left: 45%;
   display: inline-block;
   width: 1rem;
@@ -140,6 +174,7 @@ timeline-homepage {
 
 timeline-left-column {
   display: block;
+  line-height: 1.5;
 }
 
 timeline-left-div {
@@ -171,12 +206,14 @@ timeline-right-div * {
 
 timeline-theme {
   display: block;
-  font-family: "space-mono-bold", monospace;
+  font-family: "space-mono", monospace;
+  font-weight: bold;
 }
 
 timeline-title {
   display: none;
-  font-family: "space-mono-bold", monospace;
+  font-family: "space-mono", monospace;
+  font-weight: bold;
   color: var(--international-orange);
   font-size: 3.5rem;
   margin-bottom: 2rem;
@@ -184,7 +221,8 @@ timeline-title {
 
 timeline-short-title {
   display: block;
-  font-family: "space-mono-bold", monospace;
+  font-family: "space-mono", monospace;
+  font-weight: bold;
   color: var(--international-orange);
   font-size: 2.5rem;
   margin-top: 2rem;
@@ -192,24 +230,28 @@ timeline-short-title {
 
 timeline-date {
   display: block;
-  font-family: "space-mono-bold", monospace;
+  font-family: "space-mono", monospace;
+  font-weight: bold;
   font-size: 2rem;
 }
 
 timeline-subtitle {
   display: block;
   font-size: 1.3rem;
-  font-family: "space-grotesk-bold", sans-serif;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
 }
 
 timeline-duration {
   display: block;
-  font-family: "space-grotesk-bold", sans-serif;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
 }
 
 timeline-location {
   display: block;
-  font-family: "space-grotesk-bold", sans-serif;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
 }
 
 timeline-location::before {
@@ -218,7 +260,8 @@ timeline-location::before {
 
 timeline-thanks {
   display: block;
-  font-family: "space-grotesk-bold", monospace;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
 }
 
 timeline-thanks::before {
@@ -231,31 +274,19 @@ timeline-highlights {
 }
 
 timeline-highlights::before {
-  font-family: "space-grotesk-bold", sans-serif;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
   content: "Highlights:";
 }
 
 timeline-text {
   display: block;
-  line-height: 150%;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 timeline-text a::after {
   content: ">>";
-}
-
-.splide {
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.splide__slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* DESKTOP */
