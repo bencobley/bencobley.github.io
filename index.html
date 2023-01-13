@@ -9,10 +9,9 @@
     <link rel="stylesheet" href="splide/splide.min.css" />
   </head>
   <body>
-    <script src="index.js"></script>
+    <script src="jquery.js"></script>
     <script src="splide/splide.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-
+    <script src="index.js"></script>
     <timeline-section id="timeline-section0">
       <timeline-homepage id="timeline-column0">
         <timeline-me
@@ -24,16 +23,15 @@
         ></timeline-me>
         <timeline-text>
           👋 Hey! I’m Ben. I am a technologist, engineer, & designer. I am
-          currently working on game-changing tech for the recycling industry <a 
-            >	&#64;TrueCircle AI</a
-          >. Before that, I studied at Imperial College London, where, I
-          developed <a>cooking robots</a> and a
+          currently working on game-changing tech for the recycling industry
+          <a> &#64;TrueCircle AI</a>. Before that, I studied at Imperial College
+          London, where, I developed <a>cooking robots</a> and a
           <a>tissue characterisation robot</a>, amongst other things! During the
           Design Engineering degree, I interned at Google X, Dyson, and
           Brompton. I got to work on some
-          <a>great projects with great people</a>. In my free time, I love <a>building stuff with friends</a>. Interested in
-          building new things / making a positive impact on earth?
-          <a>Say hello!</a>.
+          <a>great projects with great people</a>. In my free time, I love
+          <a>building stuff with friends</a>. Interested in building new things
+          / making a positive impact on earth? <a>Say hello!</a>.
         </timeline-text>
         <a href="#timeline-section1" class="Arrow"></a>
       </timeline-homepage>
@@ -44,7 +42,9 @@
         <timeline-left-div>
           <timeline-short-title>TrueCircle AI</timeline-short-title>
           <timeline-date>2021+</timeline-date>
-          <timeline-subtitle>Design Engineer @ Early-Stage Startup</timeline-subtitle>
+          <timeline-subtitle
+            >Design Engineer @ Early-Stage Startup</timeline-subtitle
+          >
           <timeline-highlights>
             <ul>
               <li>Launched MVP product in UK facility</li>
@@ -100,18 +100,112 @@
             setup process.
           </timeline-text>
           <video loop autoplay muted>
-            <source src="img/TrueCircle_3.mp4" type="video/mp4">
+            <source src="img/TrueCircle_3.mp4" type="video/mp4" />
           </video>
           <timeline-text>
             I joined as TrueCircle's first full-time hardware engineer. Over the
-            past year+, we launched a product that can be retrofit in a few hours,
-            with zero up-front hardware cost for our customers. We send instant
-            alerts flagging operational issues, and we can verify material
-            purity with 95+% accuracy in 30+ facilities internationally. Buyers
-            now trust material quality, leading to a direct increase in revenue
-            per tonne. TrueCircle has also launched Trade, an online marketplace
-            that allows Plant Managers to buy and sell material verified by
-            purity data from our AI vision system, for the first time.
+            past year+, we launched a product that can be retrofit in a few
+            hours, with zero up-front hardware cost for our customers. We send
+            instant alerts flagging operational issues, and we can verify
+            material purity with 95+% accuracy in 30+ facilities
+            internationally. Buyers now trust material quality, leading to a
+            direct increase in revenue per tonne. TrueCircle has also launched
+            Trade, an online marketplace that allows Plant Managers to buy and
+            sell material verified by purity data from our AI vision system, for
+            the first time.
+          </timeline-text>
+          <img src="img/TrueCircle_4.png" />
+          <timeline-text>
+            My responsibilities: Launched TrueCircle’s MVP hardware and led
+            installation of our initial pilot system at a UK recycling facility.
+            Outlined a roadmap for reducing failure rate. Implemented a strategy
+            and led development of new hardware version, resulting in a 10x
+            reduction in 12-month failure rate, saving £1000s in maintenance
+            costs. Demonstrated technical leadership; designed and implemented
+            processes to hand over system installations to a 3rd-party supplier,
+            proving product scalability; a key requirement for TrueCircle’s
+            upcoming Series A.
+          </timeline-text>
+        </timeline-right-div>
+      </timeline-right-column>
+    </timeline-section>
+
+    <timeline-section id="timeline-section2">
+      <timeline-left-column>
+        <timeline-left-div>
+          <timeline-short-title>OnionBot</timeline-short-title>
+          <timeline-date>2020</timeline-date>
+          <timeline-subtitle
+            >Master's Project @ Imperial College</timeline-subtitle
+          >
+          <timeline-highlights>
+            <ul>
+              <li>Launched MVP product in UK facility</li>
+              <li>Developed 10x more reliable hardware</li>
+              <li>Implemented roadmap to outsource site work</li>
+            </ul></timeline-highlights
+          >
+          <timeline-duration>1 Year+ full-time</timeline-duration>
+          <timeline-location>TrueCircle HQ, London</timeline-location>
+          <timeline-thanks>PH et al.</timeline-thanks>
+        </timeline-left-div>
+      </timeline-left-column>
+      <timeline-right-column id="timeline-column2">
+        <timeline-right-div>
+          <timeline-title>OnionBot</timeline-title>
+          <img src="img/TrueCircle_1.png" />
+          <timeline-text>
+            <a href="https://www.truecircle.ai/">TrueCircle AI</a> is a
+            climate-tech startup developing ground-breaking computer vision
+            hardware that enables recycling facilities to recover valuable
+            material more effectively and sell material more efficiently. We
+            retrofit industrial cameras above conveyor belts to capture
+            continuous footage of material streams. Our state-of-the-art model
+            calculates composition by weight in real-time, to a 95%+ accuracy.
+            We’ve built industry-leading dashboards that empower facilites to
+            run more efficiently, preventing recyclable material from going to
+            landfill.
+          </timeline-text>
+          <div id="carousel1" class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/TrueCircle_2a.png" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/TrueCircle_2b.png" />
+                </li>
+                <li class="splide__slide">
+                  <img src="img/TrueCircle_2c.png" />
+                </li>
+              </ul>
+            </div>
+          </div>
+          <timeline-text>
+            TrueCircle partnered with UK facilites to investigate data-driven
+            optimisation of recycling processes. A typical TrueCircle AI user is
+            a Plant Manager who is preocupied with keeping unreliable equipment
+            running, and doesn't have time to experiment with upgrades to
+            improve profitability. Our users lacked any data to inform decisions
+            on upgrading equipment, or calibrate the price of their recycled
+            material. The existing players in the market couldn't offer a
+            solution accurate enough to justify their time-consuming and costly
+            setup process.
+          </timeline-text>
+          <video loop autoplay muted>
+            <source src="img/TrueCircle_3.mp4" type="video/mp4" />
+          </video>
+          <timeline-text>
+            I joined as TrueCircle's first full-time hardware engineer. Over the
+            past year+, we launched a product that can be retrofit in a few
+            hours, with zero up-front hardware cost for our customers. We send
+            instant alerts flagging operational issues, and we can verify
+            material purity with 95+% accuracy in 30+ facilities
+            internationally. Buyers now trust material quality, leading to a
+            direct increase in revenue per tonne. TrueCircle has also launched
+            Trade, an online marketplace that allows Plant Managers to buy and
+            sell material verified by purity data from our AI vision system, for
+            the first time.
           </timeline-text>
           <img src="img/TrueCircle_4.png" />
           <timeline-text>
@@ -132,11 +226,20 @@
     <timeline-section>
       <timeline-footer>
         <timeline-text>
-          &copy; Ben Cobley <script>document.write(new Date().getFullYear())</script>.
-          <br> Fork my template on <a href="https://github.com/bencobley/bencobley.github.io">GitHub</a>
-          <br> Made with ❤️ from scratch in <a href="https://en.wikipedia.org/wiki/International_orange">International Orange</a>
+          &copy; Ben Cobley
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          . <br />
+          Fork my template on
+          <a href="https://github.com/bencobley/bencobley.github.io">GitHub</a>
+          <br />
+          Made with ❤️ from scratch in
+          <a href="https://en.wikipedia.org/wiki/International_orange"
+            >International Orange</a
+          >
         </timeline-text>
-    </timeline-footer>
-  </timeline-section>
+      </timeline-footer>
+    </timeline-section>
   </body>
 </html>
