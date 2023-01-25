@@ -114,6 +114,21 @@ img {
   object-fit: cover;
 }
 
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-container iframe {
+  border-radius: 2rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 video {
   border-radius: 2rem;
   width: 100%;
@@ -150,6 +165,7 @@ timeline-me img {
 }
 
 timeline-homepage {
+  height: 100vh;
   display: block;
   font-family: "space-grotesk", sans-serif;
 }
@@ -158,14 +174,14 @@ timeline-footer {
   display: block;
   text-align: end;
   font-family: "space-grotesk", sans-serif;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin-top: 10rem;
 }
 
-timeline-footer a {
+/* timeline-footer a {
   font-family: "space-mono", monospace;
   font-weight: bold;
-}
+} */
 
 .Arrow {
   position: relative;
@@ -222,6 +238,7 @@ timeline-title {
   font-weight: bold;
   color: var(--international-orange);
   font-size: 3.5rem;
+  margin-top: 5rem;
   margin-bottom: 2rem;
 }
 
@@ -239,6 +256,7 @@ timeline-date {
   font-family: "space-mono", monospace;
   font-weight: bold;
   font-size: 2rem;
+  margin-top: 5rem;
 }
 
 timeline-subtitle {
