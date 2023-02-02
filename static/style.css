@@ -105,6 +105,7 @@ a {
   color: var(--international-orange);
   text-decoration: underline;
   letter-spacing: -0.05rem;
+  cursor: none;
 }
 
 img {
@@ -140,6 +141,16 @@ video {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+
+.splide button {
+  background: var(--space-cadet);
+  opacity: 0.8;
+}
+
+.splide button.is-active {
+  background: var(--international-orange);
+  opacity: 0.8;
 }
 
 ul {
@@ -242,7 +253,7 @@ timeline-title {
   margin-bottom: 2rem;
 }
 
-timeline-short-title {
+timeline-shorttitle {
   display: block;
   font-family: "space-mono", monospace;
   font-weight: bold;
@@ -321,7 +332,7 @@ timeline-text a::after {
     font-size: 3.5rem;
   }
 
-  timeline-short-title {
+  timeline-shorttitle {
     display: none;
     font-size: 3.5rem;
   }

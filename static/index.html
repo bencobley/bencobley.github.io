@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Ben Cobley</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/splide/splide.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="splide/splide.min.css" />
   </head>
   <body>
-    <script src="style/jquery.js"></script>
-    <script src="style/splide/splide.min.js"></script>
-    <script src="style/index.js"></script>
+    <script src="jquery.js"></script>
+    <script src="splide/splide.min.js"></script>
+    <script src="index.js"></script>
     <timeline-section>
       <timeline-homepage>
         <timeline-me
@@ -40,7 +40,7 @@
     <timeline-section>
       <timeline-left-column>
         <timeline-left-div>
-          <timeline-short-title>TrueCircle AI</timeline-short-title>
+          <timeline-shorttitle>TrueCircle AI</timeline-shorttitle>
           <timeline-date>2021+</timeline-date>
           <timeline-subtitle
             >Design Engineer @ Early-Stage Startup</timeline-subtitle
@@ -60,7 +60,15 @@
       <timeline-right-column>
         <timeline-right-div>
           <timeline-title>TrueCircle AI</timeline-title>
-          <img src="img/TrueCircle_1.png" />
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/TrueCircle_1.png" />
+                </li>
+              </ul>
+            </div>
+          </div>
           <timeline-text>
             <a href="https://www.truecircle.ai/">TrueCircle AI</a> is a
             climate-tech startup developing ground-breaking computer vision
@@ -99,9 +107,19 @@
             solution accurate enough to justify their time-consuming and costly
             setup process.
           </timeline-text>
-          <video loop autoplay muted>
-            <source src="img/TrueCircle_3.mp4" type="video/mp4" />
-          </video>
+
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <video loop autoplay muted>
+                    <source src="img/TrueCircle_3.mp4" type="video/mp4" />
+                  </video>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <timeline-text>
             I joined as TrueCircle's first full-time hardware engineer. Over the
             past year+, we launched a product that can be retrofit in a few
@@ -114,7 +132,17 @@
             sell material verified by purity data from our AI vision system, for
             the first time.
           </timeline-text>
-          <img src="img/TrueCircle_4.png" />
+
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/TrueCircle_4.png" />
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <timeline-text>
             My responsibilities: Launched TrueCircle’s MVP hardware and led
             installation of our initial pilot system at a UK recycling facility.
@@ -133,7 +161,7 @@
     <timeline-section>
       <timeline-left-column>
         <timeline-left-div>
-          <timeline-short-title>OnionBot</timeline-short-title>
+          <timeline-shorttitle>OnionBot</timeline-shorttitle>
           <timeline-date>2020</timeline-date>
           <timeline-subtitle>Design & Build Master's Project</timeline-subtitle>
           <timeline-highlights>
@@ -151,16 +179,26 @@
       <timeline-right-column>
         <timeline-right-div>
           <timeline-title>OnionBot</timeline-title>
-          <div class="video-container">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/W4utRCyo5C4?controls=0"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <div class="video-container">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/W4utRCyo5C4?controls=0"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
+
           <timeline-text>
             OnionBot is a robotic sous-chef that automates simple pan-cooking
             tasks, giving you multitasking superpowers that allow you to focus
@@ -226,7 +264,17 @@
             chef can focus on culinary creativity. This human-in-the-loop
             approach is a first of its kind in cooking robotics research.
           </timeline-text>
-          <img src="img/OnionBot_4.png" />
+
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/OnionBot_4.png" />
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <timeline-text>
             Food image classification research has reported poor real-world
             results; food images often have tricky-to-define features and a lot
@@ -247,7 +295,17 @@
             Google AutoML, allowing models to be trained for new recipes with
             just a few clicks.
           </timeline-text>
-          <img src="img/OnionBot_5.png" />
+
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <img src="img/OnionBot_5.png" />
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <timeline-text>
             This prototype demonstrates an initial proof-of-concept showing the
             possibilities of automation in home cooking, but large training

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function splides() {
     var elms = document.getElementsByClassName("splide");
     for (var i = 0; i < elms.length; i++) {
-      new Splide(elms[i]).mount();
+      new Splide(elms[i], { arrows: false }).mount();
     }
   }
 
