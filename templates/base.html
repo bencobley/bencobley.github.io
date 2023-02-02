@@ -1,0 +1,104 @@
+{# templates/base.html #}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Ben Cobley</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="stylesheet" href="static/splide/splide.min.css" />
+  </head>
+  <body>
+    <script src="static/jquery.js"></script>
+    <script src="static/splide/splide.min.js"></script>
+    <script src="static/index.js"></script>
+    <timeline-section>
+      <timeline-homepage>
+        <timeline-me
+          ><a
+            href="https://www.linkedin.com/in/bennetcobley/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><img src="static/img/me.png" /></a
+        ></timeline-me>
+        <timeline-text>
+          Hey! I’m Ben. 👋 I am a technologist, engineer, & designer. I am
+          currently working on game-changing tech for the recycling industry
+          <a> &#64;TrueCircle AI</a>. Before that, I studied at Imperial College
+          London, where, I developed <a>cooking robots</a> and a
+          <a>tissue characterisation robot</a>, amongst other things! During the
+          Design Engineering degree, I interned at Google X, Dyson, and
+          Brompton. I got to work on some
+          <a>great projects with great people</a>. In my free time, I love
+          <a>building stuff with friends</a>. Interested in building new things
+          / making a positive impact on earth? <a>Say hello!</a>.
+        </timeline-text>
+        <a href="#TrueCircle" class="Arrow"></a>
+      </timeline-homepage>
+    </timeline-section>
+
+    {% block content %} {% for entry in timeline %}
+
+    <timeline-section id="{{ timeline[0][0] }}">
+      <timeline-left-column>
+        <timeline-left-div>
+          <timeline-shorttitle
+            >{{ timeline[shorttitle][0] }}</timeline-shorttitle
+          >
+          <timeline-date>{{ date[0] }}</timeline-date>
+          <timeline-subtitle>{{ subtitle[0] }}</timeline-subtitle>
+          <timeline-highlights>
+            <ul>
+              {% for highlight in highlights %}
+              <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul></timeline-highlights
+          >
+          <timeline-duration>{{ duration[0] }}</timeline-duration>
+          <timeline-location>{{ location[0] }}</timeline-location>
+          <timeline-thanks>{{ thanks[0] }}</timeline-thanks>
+        </timeline-left-div>
+      </timeline-left-column>
+      <timeline-right-column>
+        <timeline-right-div>
+          <timeline-title>{{ title[0] }}</timeline-title>
+          {% for (media, text) in body %}
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for item in media %}
+                <li class="splide__slide">{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <timeline-text> {{ text[0] }} </timeline-text>
+          {% endfor %}
+        </timeline-right-div>
+      </timeline-right-column>
+    </timeline-section>
+
+    {% endfor %} {% endblock content %}
+
+    <timeline-section>
+      <timeline-footer>
+        <timeline-text>
+          &copy; Ben Cobley
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          <br />
+          Fork my template on
+          <a href="https://github.com/bencobley/bencobley.github.io">GitHub</a>
+          <br />
+          Made with ❤️ from scratch in
+          <a href="https://en.wikipedia.org/wiki/International_orange"
+            >International Orange</a
+          >
+        </timeline-text>
+      </timeline-footer>
+    </timeline-section>
+  </body>
+</html>
