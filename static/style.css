@@ -48,7 +48,7 @@
 
 @font-face {
   font-family: "hyperlegible";
-  src: url("fonts/AtkinsonHyperlegible.ttf-Italic") format("truetype");
+  src: url("fonts/AtkinsonHyperlegible-Italic.ttf") format("truetype");
   font-style: italic, oblique;
 }
 
