@@ -2,6 +2,9 @@ from flask import Flask, render_template
 from csv import DictReader
 from markupsafe import Markup
 from json import dump
+from requests import get
+
+CONTENT_URL = "https://docs.google.com/spreadsheet/ccc?key=1YLPiKODcjiSdY-z6nUn9SXbsGM_wfrvtsDITZ2rzNA4&output=csv&sheet=content"
 
 
 app = Flask(__name__)
@@ -9,11 +12,15 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
+    # response = get(CONTENT_URL)
+    # with open("content.csv", "w") as f:
+    #     f.write(response.text)
 
-    content = [*DictReader(open('content.csv'))]
-    TIMELINES = {}
+    input = [*DictReader(open('content.csv'))]
 
-    for d in content:
+    timelines = {}
+
+    for d in input:
 
         # Remove empty keys and values
         d = {key: val for key, val in d.items() if val}
@@ -25,26 +32,36 @@ def home():
         d.update((key, Markup(val)) for key, val in d.items())
 
         # Split new lines into lists if \n in dict value
-        d.update((key, val.strip("\n").split("\n"))
-                 for key, val in d.items())  # if "\n" in val
+        # d.update((key, val.strip("\n").split("\n"))
+        #          for key, val in d.items() if "\n" in val)
 
-        # List of values for dictionary items with key *media*
-        media = [val for key, val in d.items() if "media" in key]
+        identifier = d["tag"]
+        output = {}
 
-        # List of values for dictionary items with key *text*
-        text = [val for key, val in d.items() if "text" in key]
+        # Filter columns for template fields
+        standard_content = ["theme", "tag", "title", "shorttitle",
+                            "date", "subtitle", "duration", "location", "thanks", "text1", "text2", "text3", "text4", "text5"]
+        output.update((item, d[item].strip("\n"))
+                      for item in standard_content if item in d.keys())
 
-        # Zip media and text
-        d["body"] = list(zip(media, text))
+        # Filter columns for template fields to be converted to lists using \n new lines
+        line_separated_content = [
+            "highlights", "media1", "media2", "media3", "media4", "media5"]
+        output.update((item, d[item].strip("\n").split("\n"))
+                      for item in line_separated_content if item in d.keys())
 
-        TIMELINES[d["tag"][0]] = d
+        # Filter columns for media and text
+        media = [val for key, val in output.items() if "media" in key]
+        text = [val for key, val in output.items() if "text" in key]
+        output["body"] = list(zip(media, text))
 
-    with open("timelines.json", "w") as write_file:
-        dump(TIMELINES, write_file, indent=4)
+        timelines[identifier] = output
 
-    return render_template("timeline.html", timelines=TIMELINES)
+    with open("debug.json", "w") as write_file:
+        dump(timelines, write_file, indent=4)
+
+    return render_template("timeline.html", timelines=timelines)
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-# print

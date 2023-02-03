@@ -3,9 +3,9 @@ timelines.items() %}
 <timeline-section id="{{ identifier }}">
   <timeline-left-column>
     <timeline-left-div>
-      <timeline-shorttitle>{{ timeline['shorttitle'][0] }}</timeline-shorttitle>
-      <timeline-date>{{ timeline['date'][0] }}</timeline-date>
-      <timeline-subtitle>{{ timeline['subtitle'][0] }}</timeline-subtitle>
+      <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
+      <timeline-date>{{ timeline['date'] }}</timeline-date>
+      <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
       <timeline-highlights>
         <ul>
           {% for highlight in timeline['highlights'] %}
@@ -13,14 +13,14 @@ timelines.items() %}
           {% endfor %}
         </ul></timeline-highlights
       >
-      <timeline-duration>{{ timeline['duration'][0] }}</timeline-duration>
-      <timeline-location>{{ timeline['location'][0] }}</timeline-location>
-      <timeline-thanks>{{ timeline['thanks'][0] }}</timeline-thanks>
+      <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
+      <timeline-location>{{ timeline['location'] }}</timeline-location>
+      <timeline-thanks>{{ timeline['thanks'] }}</timeline-thanks>
     </timeline-left-div>
   </timeline-left-column>
   <timeline-right-column>
     <timeline-right-div>
-      <timeline-title>{{ timeline['title'][0] }}</timeline-title>
+      <timeline-title>{{ timeline['title'] }}</timeline-title>
       {% for (media, text) in timeline['body'] %}
       <div class="splide">
         <div class="splide__track">
@@ -31,7 +31,7 @@ timelines.items() %}
           </ul>
         </div>
       </div>
-      <timeline-text>{{ text[0] }}</timeline-text>
+      <timeline-text>{{ text }}</timeline-text>
       {% endfor %}
     </timeline-right-div>
   </timeline-right-column>
