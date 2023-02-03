@@ -60,7 +60,12 @@ def home():
     with open("debug.json", "w") as write_file:
         dump(timelines, write_file, indent=4)
 
-    return render_template("timeline.html", timelines=timelines)
+    rendered_output = render_template("timeline.html", timelines=timelines)
+
+    with open("index.html", "w") as write_file:
+        write_file.write(rendered_output)
+
+    return rendered_output
 
 
 if __name__ == "__main__":
