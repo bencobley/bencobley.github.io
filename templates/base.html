@@ -39,48 +39,7 @@
       </timeline-homepage>
     </timeline-section>
 
-    {% block content %} {% for entry in timeline %}
-
-    <timeline-section id="{{ timeline[0][0] }}">
-      <timeline-left-column>
-        <timeline-left-div>
-          <timeline-shorttitle
-            >{{ timeline[shorttitle][0] }}</timeline-shorttitle
-          >
-          <timeline-date>{{ date[0] }}</timeline-date>
-          <timeline-subtitle>{{ subtitle[0] }}</timeline-subtitle>
-          <timeline-highlights>
-            <ul>
-              {% for highlight in highlights %}
-              <li>{{ highlight }}</li>
-              {% endfor %}
-            </ul></timeline-highlights
-          >
-          <timeline-duration>{{ duration[0] }}</timeline-duration>
-          <timeline-location>{{ location[0] }}</timeline-location>
-          <timeline-thanks>{{ thanks[0] }}</timeline-thanks>
-        </timeline-left-div>
-      </timeline-left-column>
-      <timeline-right-column>
-        <timeline-right-div>
-          <timeline-title>{{ title[0] }}</timeline-title>
-          {% for (media, text) in body %}
-          <div class="splide">
-            <div class="splide__track">
-              <ul class="splide__list">
-                {% for item in media %}
-                <li class="splide__slide">{{ item }}</li>
-                {% endfor %}
-              </ul>
-            </div>
-          </div>
-          <timeline-text> {{ text[0] }} </timeline-text>
-          {% endfor %}
-        </timeline-right-div>
-      </timeline-right-column>
-    </timeline-section>
-
-    {% endfor %} {% endblock content %}
+    {% block container %}fallback{% endblock %}
 
     <timeline-section>
       <timeline-footer>

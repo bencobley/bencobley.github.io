@@ -11,11 +11,9 @@ app = Flask(__name__)
 def home():
 
     content = [*DictReader(open('content.csv'))]
-    timeline = {}
-    counter = 0
+    TIMELINES = {}
 
     for d in content:
-        counter += 1
 
         # Remove empty keys and values
         d = {key: val for key, val in d.items() if val}
@@ -39,14 +37,12 @@ def home():
         # Zip media and text
         d["body"] = list(zip(media, text))
 
-        d["test"] = "test"
+        TIMELINES[d["tag"][0]] = d
 
-        timeline[str(counter)] = d
+    with open("timelines.json", "w") as write_file:
+        dump(TIMELINES, write_file, indent=4)
 
-    with open("timeline.json", "w") as write_file:
-        dump(timeline, write_file, indent=4)
-
-    return render_template("base.html", **timeline)
+    return render_template("timeline.html", timelines=TIMELINES)
 
 
 if __name__ == "__main__":
