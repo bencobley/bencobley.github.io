@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block container %} {% for identifier, timeline in
 timelines.items() %}
 <timeline-section id="{{ identifier }}">
-  <timeline-left-column>
-    <timeline-left-div>
+  <timeline-mid-column>
+    <timeline-mid-div>
       <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
       <timeline-date>{{ timeline['date'] }}</timeline-date>
       <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
@@ -16,8 +16,8 @@ timelines.items() %}
       <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
       <timeline-location>{{ timeline['location'] }}</timeline-location>
       <timeline-thanks>{{ timeline['thanks'] }}</timeline-thanks>
-    </timeline-left-div>
-  </timeline-left-column>
+    </timeline-mid-div>
+  </timeline-mid-column>
   <timeline-right-column>
     <timeline-right-div>
       <timeline-title>{{ timeline['title'] }}</timeline-title>
