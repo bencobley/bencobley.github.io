@@ -12,9 +12,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # response = get(CONTENT_URL)
-    # with open("content.csv", "w") as f:
-    #     f.write(response.text)
+    response = get(CONTENT_URL)
+    with open("content.csv", "w") as f:
+        f.write(response.text)
 
     input = [*DictReader(open('content.csv'))]
 
