@@ -13,9 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function resizeSections() {
-    if ($(window).width() > 768) {
+    if ($(window).width() > 1000) {
       let totalHeight = 0;
-      $("timeline-row").each(function (index) {
+      $("row").each(function (index) {
         let rowHeight = $(this)
           .children("timeline-body")
           .eq(0)
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
           console.log(rowHeight);
         }
       });
-      $("#theme").height(totalHeight);
+      $("timeline-theme").height(totalHeight);
       console.log(totalHeight);
     }
   }

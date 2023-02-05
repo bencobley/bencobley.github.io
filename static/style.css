@@ -199,12 +199,12 @@ timeline-footer {
   margin-top: 10rem;
 }
 
-timeline-column {
+column {
   position: relative;
   float: left;
 }
 
-timeline-row {
+row {
   position: relative;
   display: block;
   height: 1000px;
@@ -346,12 +346,12 @@ timeline-text a::after {
     margin-bottom: 2rem;
   }
 
-  timeline-column {
+  column {
     display: block;
     width: 100%;
   }
 
-  timeline-row {
+  row {
     display: block;
     width: 100%;
     height: 100%;

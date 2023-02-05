@@ -1,37 +1,55 @@
-{% extends 'base.html' %} {% block container %} {% for identifier, timeline in
+{% extends 'base.html' %} {% block container %} {% for theme, content in
 timelines.items() %}
 
-<timeline-row id="{{ identifier }}">
-  <timeline-sticky style="width: 30%">
-    <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
-    <timeline-date>{{ timeline['date'] }}</timeline-date>
-    <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
-    <timeline-highlights>
-      <ul>
-        {% for highlight in timeline['highlights'] %}
-        <li>{{ highlight }}</li>
-        {% endfor %}
-      </ul></timeline-highlights
+<column>
+  <!-- Theme row height set in JS  -->
+  <row>
+    <!-- Theme class, 12.5 width, -->
+    <column id="{{ theme }}" style="width: 12.5%"
+      ><timeline-sticky
+        ><timeline-theme>{{ theme }}</timeline-theme></timeline-sticky
+      ></column
     >
-    <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
-    <timeline-location>{{ timeline['location'] }}</timeline-location>
-    <timeline-thanks>{{ timeline['thanks'] }}</timeline-thanks></timeline-sticky
-  >
-  <timeline-body>
-    <timeline-title>{{ timeline['title'] }}</timeline-title>
-    {% for (media, text) in timeline['body'] %}
-    <div class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          {% for item in media %}
-          <li class="splide__slide">{{ item }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-    <timeline-text>{{ text }}</timeline-text>
-    {% endfor %}</timeline-body
-  >
-</timeline-row>
-
-{% endfor %}{% endblock %}
+    <!-- Timeline class width: 82.5 -->
+    <column style="width: 82.5%">
+      {% for identifier, timeline in content.items() %}
+      <row id="{{ identifier }}">
+        <timeline-sticky style="width: 30%">
+          <timeline-shorttitle
+            >{{ timeline['shorttitle'] }}</timeline-shorttitle
+          >
+          <timeline-date>{{ timeline['date'] }}</timeline-date>
+          <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
+          <timeline-highlights>
+            <ul>
+              {% for highlight in timeline['highlights'] %}
+              <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul></timeline-highlights
+          >
+          <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
+          <timeline-location>{{ timeline['location'] }}</timeline-location>
+          <timeline-thanks
+            >{{ timeline['thanks'] }}</timeline-thanks
+          ></timeline-sticky
+        >
+        <timeline-body>
+          <timeline-title>{{ timeline['title'] }}</timeline-title>
+          {% for (media, text) in timeline['body'] %}
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for item in media %}
+                <li class="splide__slide">{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <timeline-text>{{ text }}</timeline-text>
+          {% endfor %}</timeline-body
+        >
+      </row>
+      {% endfor %}
+    </column>
+  </row></column
+>{% endfor %}{% endblock %}
