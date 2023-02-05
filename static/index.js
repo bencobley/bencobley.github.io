@@ -14,13 +14,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function resizeSections() {
     if ($(window).width() > 768) {
-      $("timeline-section").each(function (index) {
-        let columnHeight = $(this)
-          .children("timeline-right-column")
+      let totalHeight = 0;
+      $("timeline-row").each(function (index) {
+        let rowHeight = $(this)
+          .children("timeline-body")
           .eq(0)
           .outerHeight(true);
-        $(this).height(columnHeight);
+        if (typeof rowHeight !== "undefined") {
+          $(this).height(rowHeight);
+          totalHeight += rowHeight;
+          console.log(rowHeight);
+        }
       });
+      $("#theme").height(totalHeight);
+      console.log(totalHeight);
     }
   }
 });

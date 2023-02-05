@@ -1,3 +1,5 @@
+/* FONTS */
+
 @font-face {
   font-family: "space-grotesk";
   src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
@@ -57,6 +59,8 @@
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
 }
 
+/* ALL */
+
 * {
   padding: 0;
   margin: 0;
@@ -78,6 +82,8 @@ html {
 }
 
 body {
+  width: min(90vw, 1200px);
+  margin: auto;
   font-family: "hyperlegible", sans-serif;
   background: var(--very-white);
   animation: fadeInAnimation ease 0.5s;
@@ -154,23 +160,11 @@ video {
 
 ul {
   margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
-timeline-theme {
-}
-
-timeline-theme-title {
-}
-
-timeline-section {
-  display: block;
-  position: relative;
-  contain: content;
-  margin-bottom: 3rem;
-  width: min(90vw, 1200px);
-  margin: auto;
-  /* font-size: 0; */
-}
+/* CUSTOM ELEMENTS - MOBILE */
 
 timeline-me img {
   height: 5rem;
@@ -186,20 +180,7 @@ timeline-homepage {
   font-family: "space-grotesk", sans-serif;
 }
 
-timeline-footer {
-  display: block;
-  text-align: end;
-  font-family: "space-grotesk", sans-serif;
-  /* font-weight: bold; */
-  margin-top: 10rem;
-}
-
-/* timeline-footer a {
-  font-family: "space-mono", monospace;
-  font-weight: bold;
-} */
-
-.Arrow {
+.timeline-arrow {
   position: relative;
   top: 0rem;
   left: 49%;
@@ -211,36 +192,35 @@ timeline-footer {
   transform: rotate(135deg);
 }
 
-timeline-mid-column {
+timeline-footer {
   display: block;
-  line-height: 1.5;
+  text-align: end;
+  font-family: "space-grotesk", sans-serif;
+  margin-top: 10rem;
 }
 
-timeline-mid-div {
+timeline-column {
+  position: relative;
+  float: left;
+}
+
+timeline-row {
+  position: relative;
   display: block;
-  /* font-size: 1rem; */
-  padding-bottom: 2rem;
+  height: 1000px;
 }
 
-timeline-mid-div * {
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-
-timeline-mid-div ul {
-  margin-top: 0.5rem;
-  margin-bottom: 0.75rem;
-}
-
-timeline-right-column {
+timeline-sticky {
   display: block;
 }
 
-timeline-right-div {
+timeline-body {
   display: block;
 }
 
-timeline-right-div * {
+timeline-theme {
+  font-family: "space-mono", monospace;
+  font-weight: bold;
 }
 
 timeline-title {
@@ -275,18 +255,23 @@ timeline-subtitle {
   font-size: 1.3rem;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 timeline-duration {
   display: block;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 timeline-location {
   display: block;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 timeline-location::before {
@@ -297,6 +282,8 @@ timeline-thanks {
   display: block;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 timeline-thanks::before {
@@ -306,6 +293,8 @@ timeline-thanks::before {
 timeline-highlights {
   font-family: "hyperlegible", sans-serif;
   display: block;
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
 timeline-highlights::before {
@@ -324,9 +313,18 @@ timeline-text a::after {
   content: ">>";
 }
 
-/* DESKTOP */
+/* CUSTOM ELEMENTS - DESKTOP */
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1000px) {
+  timeline-theme {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    padding-top: 6.5rem;
+    font-size: 3rem;
+    position: absolute;
+    left: 0;
+  }
+
   timeline-title {
     display: block;
     font-size: 3.5rem;
@@ -348,34 +346,30 @@ timeline-text a::after {
     margin-bottom: 2rem;
   }
 
-  timeline-mid-column {
+  timeline-column {
     display: block;
-    width: 25%;
+    width: 100%;
+  }
+
+  timeline-row {
+    display: block;
+    width: 100%;
     height: 100%;
   }
 
-  timeline-mid-div {
+  timeline-sticky {
     margin-bottom: 1rem;
     position: -webkit-sticky;
     position: sticky;
+    width: 100%;
     top: 0;
     left: 0;
   }
 
-  timeline-mid-div * {
-  }
-
-  timeline-right-column {
+  timeline-body {
     display: block;
-    width: 65%;
     position: absolute;
     top: 0;
     left: 35%;
-  }
-
-  timeline-right-div {
-  }
-
-  timeline-right-div * {
   }
 }

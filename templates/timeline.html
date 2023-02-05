@@ -1,39 +1,37 @@
 {% extends 'base.html' %} {% block container %} {% for identifier, timeline in
 timelines.items() %}
-<timeline-section id="{{ identifier }}">
-  <timeline-mid-column>
-    <timeline-mid-div>
-      <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
-      <timeline-date>{{ timeline['date'] }}</timeline-date>
-      <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
-      <timeline-highlights>
-        <ul>
-          {% for highlight in timeline['highlights'] %}
-          <li>{{ highlight }}</li>
+
+<timeline-row id="{{ identifier }}">
+  <timeline-sticky style="width: 30%">
+    <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
+    <timeline-date>{{ timeline['date'] }}</timeline-date>
+    <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
+    <timeline-highlights>
+      <ul>
+        {% for highlight in timeline['highlights'] %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul></timeline-highlights
+    >
+    <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
+    <timeline-location>{{ timeline['location'] }}</timeline-location>
+    <timeline-thanks>{{ timeline['thanks'] }}</timeline-thanks></timeline-sticky
+  >
+  <timeline-body>
+    <timeline-title>{{ timeline['title'] }}</timeline-title>
+    {% for (media, text) in timeline['body'] %}
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for item in media %}
+          <li class="splide__slide">{{ item }}</li>
           {% endfor %}
-        </ul></timeline-highlights
-      >
-      <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
-      <timeline-location>{{ timeline['location'] }}</timeline-location>
-      <timeline-thanks>{{ timeline['thanks'] }}</timeline-thanks>
-    </timeline-mid-div>
-  </timeline-mid-column>
-  <timeline-right-column>
-    <timeline-right-div>
-      <timeline-title>{{ timeline['title'] }}</timeline-title>
-      {% for (media, text) in timeline['body'] %}
-      <div class="splide">
-        <div class="splide__track">
-          <ul class="splide__list">
-            {% for item in media %}
-            <li class="splide__slide">{{ item }}</li>
-            {% endfor %}
-          </ul>
-        </div>
+        </ul>
       </div>
-      <timeline-text>{{ text }}</timeline-text>
-      {% endfor %}
-    </timeline-right-div>
-  </timeline-right-column>
-</timeline-section>
+    </div>
+    <timeline-text>{{ text }}</timeline-text>
+    {% endfor %}</timeline-body
+  >
+</timeline-row>
+
 {% endfor %}{% endblock %}
