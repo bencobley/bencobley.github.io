@@ -78,7 +78,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: calc(15px + 0.390625vw);
+  font-size: calc(15.5px + 0.390625vw);
 }
 
 body {
@@ -196,31 +196,65 @@ timeline-footer {
   display: block;
   text-align: end;
   font-family: "space-grotesk", sans-serif;
-  margin-top: 10rem;
+  margin-top: 15rem;
+  padding-top: 15rem;
 }
 
 column {
   position: relative;
+  display: block;
   float: left;
+  height: 100%;
+  width: 100%;
 }
 
 row {
   position: relative;
   display: block;
-  height: 1000px;
-}
-
-timeline-sticky {
-  display: block;
+  width: 100%;
 }
 
 timeline-body {
   display: block;
 }
 
-timeline-theme {
+.timeline-theme-sticky {
+  /* stickyness */
+  margin-bottom: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+
   font-family: "space-mono", monospace;
   font-weight: bold;
+  white-space: nowrap;
+  text-transform: uppercase;
+  /* pasted from mobile */
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding-top: 3rem;
+  font-size: 1.5rem;
+  left: 0;
+}
+
+.timeline-item-sticky {
+  /* display: block; */
+  /* margin-bottom: 1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0; */
+}
+
+.timeline-theme-column {
+  width: 5%;
+  padding-right: 5%;
+}
+
+.timeline-item-column {
+  width: 90%;
 }
 
 timeline-title {
@@ -303,6 +337,10 @@ timeline-highlights::before {
   content: "Highlights:";
 }
 
+timeline-highlights a::after {
+  content: ">>";
+}
+
 timeline-text {
   display: block;
   margin-top: 2rem;
@@ -316,15 +354,6 @@ timeline-text a::after {
 /* CUSTOM ELEMENTS - DESKTOP */
 
 @media only screen and (min-width: 1000px) {
-  timeline-theme {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    padding-top: 6.5rem;
-    font-size: 3rem;
-    position: absolute;
-    left: 0;
-  }
-
   timeline-title {
     display: block;
     font-size: 3.5rem;
@@ -346,30 +375,40 @@ timeline-text a::after {
     margin-bottom: 2rem;
   }
 
-  column {
-    display: block;
-    width: 100%;
-  }
-
-  row {
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
-
-  timeline-sticky {
-    margin-bottom: 1rem;
-    position: -webkit-sticky;
-    position: sticky;
-    width: 100%;
-    top: 0;
-    left: 0;
-  }
-
   timeline-body {
     display: block;
     position: absolute;
     top: 0;
     left: 35%;
+  }
+
+  .timeline-theme-row {
+    margin-bottom: 75px;
+  }
+
+  .timeline-theme-column {
+    /* width: 10%; */
+  }
+
+  .timeline-item-row {
+  }
+
+  .timeline-item-column {
+    /* width: 90%; */
+  }
+
+  .timeline-theme-sticky {
+    font-size: 2.5rem;
+    padding-top: 6.5rem;
+  }
+
+  .timeline-item-sticky {
+    width: 28%;
+    display: block;
+    margin-bottom: 1rem;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
 }
