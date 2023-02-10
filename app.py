@@ -13,8 +13,8 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     response = get(CONTENT_URL)
-    # with open("content.csv", "w", encoding="latin1") as f:
-    #     f.write(response.text)
+    with open("content.csv", "w", encoding="latin1") as f:
+        f.write(response.text)
 
     input = [*DictReader(open('content.csv'))]
 
