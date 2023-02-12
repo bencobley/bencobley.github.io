@@ -180,16 +180,25 @@ timeline-homepage {
   font-family: "space-grotesk", sans-serif;
 }
 
+.homepage-arrow {
+  position: absolute;
+  font-size: 3rem;
+  line-height: 3rem;
+  width: 3rem;
+  left: calc(50% - 1.5rem);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
 .timeline-arrow {
-  position: relative;
-  top: 0rem;
-  left: 49%;
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  border-right: 0.2em solid lightgray;
-  border-top: 0.2em solid lightgray;
-  transform: rotate(135deg);
+  font-family: "space-mono", monospace;
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.timeline-arrow:hover {
+  color: var(--international-orange);
 }
 
 timeline-footer {
@@ -219,7 +228,6 @@ timeline-body {
 }
 
 .timeline-theme-sticky {
-  /* stickyness */
   margin-bottom: 1rem;
   position: -webkit-sticky;
   position: sticky;
@@ -254,7 +262,7 @@ timeline-title {
   font-weight: bold;
   color: var(--international-orange);
   font-size: 3.5rem;
-  padding-top: 5rem;
+  padding-top: 3.5rem;
   padding-bottom: 2rem;
 }
 
@@ -322,6 +330,20 @@ timeline-highlights {
   margin-bottom: 0.5rem;
 }
 
+timeline-text {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+timeline-text a::after {
+  content: ">>";
+}
+
+timeline-text a:hover {
+  font-style: italic;
+}
+
 timeline-highlights::before {
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
@@ -332,14 +354,8 @@ timeline-highlights a::after {
   content: ">>";
 }
 
-timeline-text {
-  display: block;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-timeline-text a::after {
-  content: ">>";
+timeline-highlights a:hover {
+  font-style: italic;
 }
 
 /* CUSTOM ELEMENTS - DESKTOP */
@@ -360,7 +376,7 @@ timeline-text a::after {
 
   timeline-date {
     font-size: 3.5rem;
-    padding-top: 5rem;
+    padding-top: 3.5rem;
     margin-bottom: 2rem;
   }
 
@@ -386,7 +402,7 @@ timeline-text a::after {
 
   .timeline-theme-sticky {
     font-size: 2.5rem;
-    padding-top: 6.5rem;
+    padding-top: 5rem;
   }
 
   .timeline-item-sticky {
