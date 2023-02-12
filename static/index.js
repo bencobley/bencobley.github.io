@@ -13,23 +13,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function resizeSections() {
-    // if ($(window).width() > 1000) {
-
     // Calculate total height for each timeline-theme-row once page is loaded
     $(".timeline-theme-row").each(function () {
       let totalHeight = 0;
 
-      // For each item row:
+      // For each item row in column:
       $(this)
-        .children(".timeline-item-column")
-        .children(".timeline-item-row")
+        .find(".timeline-item-column .timeline-item-row")
         .each(function () {
           // Get the height of timeline-body
           let bodyHeight = $(this).children("timeline-body").eq(0).outerHeight(true);
           // Get the height of timeline-item-sticky
           let stickyHeight = $(this).children(".timeline-item-sticky").eq(0).outerHeight(true);
           // Set timeline row height depending on mobile or desktop
-          if ($(window).width() > 1000) {
+          if (($(window).width() > 1000) & ($(window).height() > 600)) {
             $(this).height(bodyHeight);
             totalHeight += bodyHeight;
           } else {
@@ -39,14 +36,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       // Set the height of the timeline-theme-row to the total height
       $(this).height(totalHeight);
+
+      // Get id of next timeline-theme-row
+      let nextRowId = $(this).parent().next().attr("id");
+      let prevRowId = $(this).parent().prev().attr("id");
+      console.log(nextRowId);
+      // If prev/nextRowID then add a button to timeline-theme-sticky
+      if (prevRowId) {
+        $(this)
+          .find(".timeline-theme-sticky")
+          .first()
+          .prepend("<a style='color: black; text-decoration: none;' href='#" + prevRowId + "'><</a>&nbsp;");
+      }
+      if (nextRowId) {
+        $(this)
+          .find(".timeline-theme-sticky")
+          .first()
+          .append("&nbsp;<a style='color: black; text-decoration: none;' href='#" + nextRowId + "'>></a>");
+      }
     });
-    // }
   }
 });
-
-// Set timeline-theme-column height to the total height minus the text height
-// let textHeight = $(this).children(".timeline-theme-column").children(".timeline-theme-sticky").eq(0).outerHeight(true);
-// $(this)
-//   .children(".timeline-theme-column")
-//   .eq(0)
-//   .height(totalHeight - textHeight);

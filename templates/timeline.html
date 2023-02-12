@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block container %} {% for theme, content in timelines.items() %}
 
-<column>
+<column id="{{ theme }}">
   <row class="timeline-theme-row">
-    <column id="{{ theme }}" class="timeline-theme-column"><timeline-sticky class="timeline-theme-sticky">{{ theme }}</timeline-sticky></column>
+    <column class="timeline-theme-column"><timeline-sticky class="timeline-theme-sticky">{{ theme }}</timeline-sticky></column>
     <column class="timeline-item-column">
       {% for identifier, timeline in content.items() %}
       <row id="{{ identifier }}" class="timeline-item-row">

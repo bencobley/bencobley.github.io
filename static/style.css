@@ -78,7 +78,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: calc(15.5px + 0.390625vw);
+  font-size: calc(15px + 0.390625vw);
 }
 
 body {
@@ -111,6 +111,12 @@ a {
   color: var(--international-orange);
   text-decoration: underline;
   letter-spacing: -0.05rem;
+}
+
+ul {
+  margin-left: 2rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 img {
@@ -158,12 +164,6 @@ video {
   opacity: 0.8;
 }
 
-ul {
-  margin-left: 2rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
-}
-
 /* CUSTOM ELEMENTS - MOBILE */
 
 timeline-me img {
@@ -201,8 +201,8 @@ timeline-footer {
 }
 
 column {
-  position: relative;
   display: block;
+  position: relative;
   float: left;
   height: 100%;
   width: 100%;
@@ -226,26 +226,17 @@ timeline-body {
   width: 100%;
   top: 0;
   left: 0;
-
   font-family: "space-mono", monospace;
   font-weight: bold;
   white-space: nowrap;
   text-transform: uppercase;
-  /* pasted from mobile */
   writing-mode: vertical-rl;
   text-orientation: mixed;
   padding-top: 3rem;
   font-size: 1.5rem;
-  left: 0;
 }
 
 .timeline-item-sticky {
-  /* display: block; */
-  /* margin-bottom: 1rem;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0; */
 }
 
 .timeline-theme-column {
@@ -325,8 +316,8 @@ timeline-thanks::before {
 }
 
 timeline-highlights {
-  font-family: "hyperlegible", sans-serif;
   display: block;
+  font-family: "hyperlegible", sans-serif;
   font-style: italic;
   margin-bottom: 0.5rem;
 }
@@ -353,7 +344,7 @@ timeline-text a::after {
 
 /* CUSTOM ELEMENTS - DESKTOP */
 
-@media only screen and (min-width: 1000px) {
+@media only screen and ((min-width: 1000px) and (min-height: 600px)) {
   timeline-title {
     display: block;
     font-size: 3.5rem;
@@ -364,19 +355,16 @@ timeline-text a::after {
   }
 
   timeline-homepage {
-    display: block;
     font-size: 1.4rem;
   }
 
   timeline-date {
-    display: block;
     font-size: 3.5rem;
     padding-top: 5rem;
     margin-bottom: 2rem;
   }
 
   timeline-body {
-    display: block;
     position: absolute;
     top: 0;
     left: 35%;
@@ -387,7 +375,6 @@ timeline-text a::after {
   }
 
   .timeline-theme-column {
-    /* width: 10%; */
   }
 
   .timeline-item-row {
