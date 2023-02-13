@@ -188,16 +188,35 @@ timeline-homepage {
   left: calc(50% - 1.5rem);
   writing-mode: vertical-rl;
   text-orientation: mixed;
-}
-
-.timeline-arrow {
   font-family: "space-mono", monospace;
   color: #e0e0e0;
   text-decoration: none;
   padding: 0.5rem;
 }
 
-.timeline-arrow:hover {
+.homepage-arrow:hover {
+  color: var(--international-orange);
+}
+
+.timeline-theme-arrow {
+  font-family: "space-mono", monospace;
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.timeline-theme-arrow:hover {
+  color: var(--international-orange);
+}
+
+.timeline-item-arrow {
+  font-family: "space-mono", monospace;
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.timeline-item-arrow:hover {
   color: var(--international-orange);
 }
 
@@ -205,8 +224,6 @@ timeline-footer {
   display: block;
   text-align: end;
   font-family: "space-grotesk", sans-serif;
-  margin-top: 15rem;
-  padding-top: 15rem;
 }
 
 column {
@@ -355,7 +372,7 @@ timeline-highlights a::after {
 }
 
 timeline-highlights a:hover {
-  font-style: italic;
+  font-style: none;
 }
 
 /* CUSTOM ELEMENTS - DESKTOP */

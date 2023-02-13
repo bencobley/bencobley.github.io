@@ -19,81 +19,97 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function nextTheme(element) {
     // Return next theme ID given current theme ID
-    return (nextThemeId = $(element).parent().next().attr("id"));
+    let nextThemeId = $("#" + element)
+      .next()
+      .attr("id");
+    if (nextThemeId) {
+      return nextThemeId;
+    } else {
+      return "#";
+    }
   }
 
   function prevTheme(element) {
     // Return previous theme ID given current theme ID
-    return (prevThemeId = $(element).parent().prev().attr("id"));
+    let prevThemeId = $("#" + element)
+      .prev()
+      .attr("id");
+    if (prevThemeId) {
+      return prevThemeId;
+    } else {
+      return "#Home";
+    }
   }
 
   function nextItem(element) {
     // Return next item ID given current item ID
-    let nextItemId = $(element).next().attr("id");
-    if (nextItemId) {
-      return nextItemId;
+
+    let nextItemID = $("#" + element)
+      .next()
+      .attr("id");
+    let nextThemeItemID = $("#" + element)
+      .parent()
+      .parent()
+      .parent()
+      .next()
+      .find(".timeline-item-row")
+      .first()
+      .attr("id");
+    if (nextItemID) {
+      return nextItemID;
+    } else if (nextThemeItemID) {
+      return nextThemeItemID;
     } else {
-      nextItemId = $(element).parent().parent().parent().next().find(".timeline-item-row").first().attr("id");
+      return "Footer";
     }
   }
 
   function prevItem(element) {
     // Return previous item ID given current item ID
-    let prevItemId = $(element).prev().attr("id");
-    if (prevItemId) {
-      return prevItemId;
+    let prevItemID = $("#" + element)
+      .prev()
+      .attr("id");
+    let prevThemeItemID = $("#" + element)
+      .parent()
+      .parent()
+      .parent()
+      .prev()
+      .find(".timeline-item-row")
+      .last()
+      .attr("id");
+    if (prevItemID) {
+      return prevItemID;
+    } else if (prevThemeItemID) {
+      return prevThemeItemID;
     } else {
-      prevItemId = $(element).parent().parent().parent().prev().find(".timeline-item-row").last().attr("id");
+      return "Home";
     }
   }
 
   function addNavigation() {
     $(".timeline-theme-row").each(function () {
-      // Get id of next timeline-theme-row
-      let nextThemeId = $(this).parent().next().attr("id");
-      let prevThemeId = $(this).parent().prev().attr("id");
-
-      // Add theme navigation arrows
-      if (prevThemeId) {
-        $(this)
-          .find(".timeline-theme-sticky")
-          .first()
-          .prepend("<a class='timeline-arrow timeline-up' href='#" + prevThemeId + "'><</a>");
-      }
-      if (nextThemeId) {
-        $(this)
-          .find(".timeline-theme-sticky")
-          .first()
-          .append("<a class='timeline-arrow timeline-down' href='#" + nextThemeId + "'>></a>");
-      }
-      // Add item navigation arrows
+      currentThemeID = $(this).parent().attr("id");
+      // For each timeline-theme-arrow
       $(this)
-        .find(".timeline-item-row")
-        .each(function () {
-          // Get id of next timeline-item-row
-          let nextItemId = $(this).next().attr("id");
-          if (!nextItemId) {
-            nextItemId = $(this).parent().parent().parent().next().find(".timeline-item-row").first().attr("id");
-          }
-          // Get id of previous timeline-item-row
-          let prevItemId = $(this).prev().attr("id");
-          if (!prevItemId) {
-            prevItemId = $(this).parent().parent().parent().prev().find(".timeline-item-row").last().attr("id");
-          }
-          // Add navigation to timeline-theme-sticky
-          if (prevItemId) {
-            $(this)
-              .find("timeline-date")
-              .first()
-              .prepend("<a class='timeline-arrow timeline-left' href='#" + prevItemId + "'><</a>");
-          }
-          if (nextItemId) {
-            $(this)
-              .find("timeline-date")
-              .first()
-              .append("<a class='timeline-arrow timeline-right' href='#" + nextItemId + "'>></a>");
-          }
-        });
+        .find(".timeline-theme-arrow")
+        .first()
+        .attr({ href: "#" + prevTheme(currentThemeID), class: "timeline-theme-arrow timeline-up" });
+      $(this)
+        .find(".timeline-theme-arrow")
+        .last()
+        .attr({ href: "#" + nextTheme(currentThemeID), class: "timeline-theme-arrow timeline-down" });
+    });
+    $(".timeline-item-row").each(function () {
+      currentItemID = $(this).attr("id");
+      // For each timeline-item-arrow
+      $(this)
+        .find(".timeline-item-arrow")
+        .first()
+        .attr({ href: "#" + prevItem(currentItemID), class: "timeline-theme-arrow timeline-left" });
+      $(this)
+        .find(".timeline-item-arrow")
+        .last()
+        .attr({ href: "#" + nextItem(currentItemID), class: "timeline-theme-arrow timeline-right" });
     });
   }
 
@@ -135,13 +151,64 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function addKeyNavigation() {
-  console.log("document ready");
   $(document).on("keydown", function (event) {
     if (event.key === "ArrowDown") {
       $(".timeline-down").each(function () {
-        console.log($(this).isInViewport());
         if ($(this).isInViewport()) {
-          $(this).click();
+          // Scroll to the target anchor
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top,
+            },
+            500
+          );
+          // Update the URL hash without reloading the page
+          history.pushState(null, null, $(this).attr("href"));
+        }
+      });
+    }
+    if (event.key === "ArrowUp") {
+      $(".timeline-up").each(function () {
+        if ($(this).isInViewport()) {
+          // Scroll to the target anchor
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top,
+            },
+            500
+          );
+          // Update the URL hash without reloading the page
+          history.pushState(null, null, $(this).attr("href"));
+        }
+      });
+    }
+    if (event.key === "ArrowRight") {
+      $(".timeline-right").each(function () {
+        if ($(this).isInViewport()) {
+          // Scroll to the target anchor
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top,
+            },
+            100
+          );
+          // Update the URL hash without reloading the page
+          history.pushState(null, null, $(this).attr("href"));
+        }
+      });
+    }
+    if (event.key === "ArrowLeft") {
+      $(".timeline-left").each(function () {
+        if ($(this).isInViewport()) {
+          // Scroll to the target anchor
+          $("html, body").animate(
+            {
+              scrollTop: $($(this).attr("href")).offset().top,
+            },
+            100
+          );
+          // Update the URL hash without reloading the page
+          history.pushState(null, null, $(this).attr("href"));
         }
       });
     }
