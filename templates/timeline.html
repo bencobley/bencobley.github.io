@@ -3,14 +3,16 @@
 <column id="{{ theme }}">
   <row class="timeline-theme-row">
     <column class="timeline-theme-column"
-      ><timeline-sticky class="timeline-theme-sticky"><a class="timeline-arrow"></a>{{ theme }}<a class="timeline-arrow"></a></timeline-sticky
-    ></column>
+      ><timeline-sticky class="timeline-theme-sticky"
+        ><a class="timeline-theme-arrow"><</a>{{ theme }}<a class="timeline-theme-arrow">></a></timeline-sticky
+      ></column
+    >
     <column class="timeline-item-column">
       {% for identifier, timeline in content.items() %}
       <row id="{{ identifier }}" class="timeline-item-row">
         <timeline-sticky class="timeline-item-sticky">
           <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
-          <timeline-date><a class="timeline-arrow"></a>{{ timeline['date'] }}<a class="timeline-arrow"></a></timeline-date>
+          <timeline-date><a class="timeline-item-arrow"><</a>{{ timeline['date'] }}<a class="timeline-item-arrow">></a></timeline-date>
           <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
           <timeline-highlights>
             <ul>
