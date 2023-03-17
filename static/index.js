@@ -13,7 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize splide for each splide class
     var elms = document.getElementsByClassName("splide");
     for (var i = 0; i < elms.length; i++) {
-      new Splide(elms[i], { arrows: false }).mount();
+      var splide = new Splide(elms[i], { arrows: false, heightRatio: 0.6, lazyLoad: "sequential" });
+      splide.mount();
     }
   }
 
@@ -132,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .find(".item-column .item-row")
         .each(function () {
           // Get the height of body
-          let bodyHeight = $(this).children("body").eq(0).outerHeight(true);
+          let bodyHeight = $(this).children(".item-body").eq(0).outerHeight(true);
           // Get the height of item-sticky
           let stickyHeight = $(this).children(".item-sticky").eq(0).outerHeight(true);
           // Set timeline row height depending on mobile or desktop

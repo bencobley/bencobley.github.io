@@ -187,7 +187,7 @@ video {
 }
 
 .splide {
-  max-width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -213,6 +213,7 @@ video {
 .homepage-arrow {
   position: absolute;
   font-size: 3rem;
+  font-weight: bold;
   line-height: 3rem;
   width: 3rem;
   left: calc(50% - 1.5rem);
@@ -392,20 +393,7 @@ video {
 
 /* ===DESKTOP-ONLY=== */
 
-@media only screen and ((min-width: 1000px) and (min-height: 600px)) {
-  1. =GLOBAL
-  2. =FONTS
-  3. =PRIMARY
-  4. =SECONDARY
-  5. =MEDIA
-  6. =HOMEPAGE
-  7. =THEME
-  8. =ITEMS
-  9. =TEXT
-  10. =FOOTER
-  11. =DESKTOP-ONLY
-  12. =ANIMATIONS
-  
+@media only screen and (min-width: 1000px) {
   /* =HOMEPAGE= */
 
   .homepage {
