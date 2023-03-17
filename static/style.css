@@ -1,4 +1,12 @@
-/* FONTS */
+/* CSS DIRECTORY
+	1. =FONTS
+	2. =PRIMARY
+	3. =HEADER
+	4. =SIDEBAR
+	5. =FOOTER
+*/
+
+/* ===FONTS=== */
 
 @font-face {
   font-family: "space-grotesk";
@@ -59,7 +67,7 @@
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
 }
 
-/* ALL */
+/* ===GLOBAL=== */
 
 * {
   padding: 0;
@@ -76,6 +84,8 @@
   --very-black: #000000;
 }
 
+/* ===PRIMARY=== */
+
 html {
   scroll-behavior: smooth;
   font-size: calc(15px + 0.390625vw);
@@ -84,21 +94,12 @@ html {
 body {
   width: min(90vw, 1200px);
   margin: auto;
-  font-family: "hyperlegible", sans-serif;
   background: var(--very-white);
+  font-family: "hyperlegible", sans-serif;
+  line-height: 1.6;
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  line-height: 1.6;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 ::selection {
@@ -119,6 +120,8 @@ ul {
   margin-top: 0.5rem;
 }
 
+/* ===MEDIA=== */
+
 img {
   border-radius: 1.5rem;
   width: 100%;
@@ -131,6 +134,7 @@ img {
   padding-bottom: 56.25%; /* 16:9 */
   height: 0;
 }
+
 .video-container iframe {
   border-radius: 1.5rem;
 
@@ -164,23 +168,17 @@ video {
   opacity: 0.8;
 }
 
-/* CUSTOM ELEMENTS - MOBILE */
+/* LOCAL CSS */
 
-timeline-me img {
-  height: 5rem;
-  width: 5rem;
-  border-radius: 50%;
-  margin-top: 5rem;
-  margin-bottom: 1rem;
-}
+/* Homepage */
 
-timeline-homepage {
+.timeline-homepage {
   height: 100vh;
   display: block;
   font-family: "space-grotesk", sans-serif;
 }
 
-.homepage-arrow {
+.timeline-homepage-arrow {
   position: absolute;
   font-size: 3rem;
   line-height: 3rem;
@@ -194,39 +192,30 @@ timeline-homepage {
   padding: 0.5rem;
 }
 
-.homepage-arrow:hover {
+.timeline-homepage-arrow:hover {
   color: var(--international-orange);
 }
 
-.timeline-theme-arrow {
-  font-family: "space-mono", monospace;
-  color: #e0e0e0;
-  text-decoration: none;
-  padding: 0.5rem;
+.timeline-me img {
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
 }
 
-.timeline-theme-arrow:hover {
-  color: var(--international-orange);
+/* Timeline section */
+
+.timeline {
 }
 
-.timeline-item-arrow {
-  font-family: "space-mono", monospace;
-  color: #e0e0e0;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-.timeline-item-arrow:hover {
-  color: var(--international-orange);
-}
-
-timeline-footer {
+.timeline-row {
+  position: relative;
   display: block;
-  text-align: end;
-  font-family: "space-grotesk", sans-serif;
+  width: 100%;
 }
 
-column {
+.timeline-column {
   display: block;
   position: relative;
   float: left;
@@ -234,14 +223,25 @@ column {
   width: 100%;
 }
 
-row {
-  position: relative;
-  display: block;
-  width: 100%;
+.timeline-arrow {
+  font-family: "space-mono", monospace;
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem;
 }
 
-timeline-body {
-  display: block;
+.timeline-arrow:hover {
+  color: var(--international-orange);
+}
+
+/* Timeline theme (eg. 'Experience' theme) */
+
+.timeline-theme-row {
+}
+
+.timeline-theme-column {
+  width: 5%;
+  padding-right: 5%;
 }
 
 .timeline-theme-sticky {
@@ -261,20 +261,25 @@ timeline-body {
   font-size: 1.5rem;
 }
 
-.timeline-item-sticky {
-}
-
-.timeline-theme-column {
-  width: 5%;
-  padding-right: 5%;
-}
+/* Timeline items (eg. 'Imperial' item) */
 
 .timeline-item-column {
   width: 90%;
 }
 
-timeline-title {
-  display: none;
+.timeline-item-row {
+}
+
+.timeline-item-sticky {
+}
+
+.timeline-item-body {
+}
+
+/* Timeline elements (eg. 'Title') */
+
+.timeline-title {
+  display: none; /* Hide on mobile */
   font-family: "space-mono", monospace;
   font-weight: bold;
   color: var(--international-orange);
@@ -283,7 +288,21 @@ timeline-title {
   padding-bottom: 2rem;
 }
 
-timeline-shorttitle {
+.timeline-text {
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-text a::after {
+  content: ">>";
+}
+
+.timeline-text a:hover {
+  font-style: italic;
+}
+
+.timeline-shorttitle {
   display: block;
   font-family: "space-mono", monospace;
   font-weight: bold;
@@ -292,7 +311,7 @@ timeline-shorttitle {
   padding-top: 2rem;
 }
 
-timeline-date {
+.timeline-date {
   display: block;
   font-family: "space-mono", monospace;
   font-weight: bold;
@@ -300,7 +319,7 @@ timeline-date {
   font-size: 2rem;
 }
 
-timeline-subtitle {
+.timeline-subtitle {
   display: block;
   font-size: 1.3rem;
   font-family: "space-grotesk", sans-serif;
@@ -308,113 +327,91 @@ timeline-subtitle {
   margin-bottom: 0.5rem;
 }
 
-timeline-duration {
-  display: block;
-  font-family: "space-grotesk", sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-timeline-location {
-  display: block;
-  font-family: "space-grotesk", sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-timeline-location::before {
-  content: "@ ";
-}
-
-timeline-thanks {
-  display: block;
-  font-family: "space-grotesk", sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-timeline-thanks::before {
-  content: "With thanks to ";
-}
-
-timeline-highlights {
+.timeline-highlights {
   display: block;
   font-family: "hyperlegible", sans-serif;
   font-style: italic;
   margin-bottom: 0.5rem;
 }
 
-timeline-text {
-  display: block;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-timeline-text a::after {
-  content: ">>";
-}
-
-timeline-text a:hover {
-  font-style: italic;
-}
-
-timeline-highlights::before {
+.timeline-highlights::before {
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
   content: "Highlights:";
 }
 
-timeline-highlights a::after {
+.timeline-highlights a::after {
   content: ">>";
 }
 
-timeline-highlights a:hover {
+.timeline-highlights a:hover {
   font-style: none;
 }
 
-/* CUSTOM ELEMENTS - DESKTOP */
+.timeline-duration {
+  display: block;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-location {
+  display: block;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-location::before {
+  content: "@ ";
+}
+
+.timeline-thanks {
+  display: block;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-thanks::before {
+  content: "With thanks to ";
+}
+
+/* Timeline footer */
+
+.timeline-footer {
+  display: block;
+  text-align: end;
+  font-family: "space-grotesk", sans-serif;
+}
+
+/* DESKTOP-ONLY */
 
 @media only screen and ((min-width: 1000px) and (min-height: 600px)) {
-  timeline-title {
+  .timeline-homepage {
+    font-size: 1.4rem;
+  }
+
+  .timeline-title {
     display: block;
     font-size: 3.5rem;
   }
 
-  timeline-shorttitle {
+  .timeline-shorttitle {
     display: none;
   }
 
-  timeline-homepage {
-    font-size: 1.4rem;
-  }
-
-  timeline-date {
+  .timeline-date {
     font-size: 3.5rem;
     padding-top: 3.5rem;
     margin-bottom: 2rem;
   }
 
-  timeline-body {
-    position: absolute;
-    top: 0;
-    left: 35%;
-  }
-
   .timeline-theme-row {
     margin-bottom: 75px;
-  }
-
-  .timeline-theme-column {
-  }
-
-  .timeline-item-row {
-  }
-
-  .timeline-item-column {
-    /* width: 90%; */
   }
 
   .timeline-theme-sticky {
@@ -430,5 +427,22 @@ timeline-highlights a:hover {
     position: sticky;
     top: 0;
     left: 0;
+  }
+
+  .timeline-item-body {
+    position: absolute;
+    top: 0;
+    left: 35%;
+  }
+}
+
+/* ANIMATION */
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }

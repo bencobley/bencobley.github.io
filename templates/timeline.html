@@ -1,32 +1,30 @@
 {% extends 'base.html' %} {% block container %} {% for theme, content in timelines.items() %}
 
-<column id="{{ theme }}">
-  <row class="timeline-theme-row">
-    <column class="timeline-theme-column"
-      ><timeline-sticky class="timeline-theme-sticky"
-        ><a class="timeline-theme-arrow"><</a>{{ theme }}<a class="timeline-theme-arrow">></a></timeline-sticky
-      ></column
-    >
-    <column class="timeline-item-column">
+<div class="timeline-column timeline" id="{{ theme }}">
+  <div class="timeline-row timeline-theme-row">
+    <div class="timeline-column timeline-theme-column">
+      <div class="timeline-theme-sticky"><a class="timeline-arrow"><</a>{{ theme }}<a class="timeline-arrow">></a></div>
+    </div>
+    <div class="timeline-column timeline-item-column">
       {% for identifier, timeline in content.items() %}
-      <row id="{{ identifier }}" class="timeline-item-row">
-        <timeline-sticky class="timeline-item-sticky">
-          <timeline-shorttitle>{{ timeline['shorttitle'] }}</timeline-shorttitle>
-          <timeline-date><a class="timeline-item-arrow"><</a>{{ timeline['date'] }}<a class="timeline-item-arrow">></a></timeline-date>
-          <timeline-subtitle>{{ timeline['subtitle'] }}</timeline-subtitle>
-          <timeline-highlights>
+      <div class="timeline-row timeline-item-row" id="{{ identifier }}">
+        <div class="timeline-item-sticky">
+          <span class="timeline-shorttitle">{{ timeline['shorttitle'] }}</span>
+          <span class="timeline-date"><a class="timeline-arrow"><</a>{{ timeline['date'] }}<a class="timeline-arrow">></a></span>
+          <span class="timeline-subtitle">{{ timeline['subtitle'] }}</span>
+          <span class="timeline-highlights">
             <ul>
               {% for highlight in timeline['highlights'] %}
               <li>{{ highlight }}</li>
               {% endfor %}
-            </ul></timeline-highlights
+            </ul></span
           >
-          <timeline-duration>{{ timeline['duration'] }}</timeline-duration>
-          <timeline-location>{{ timeline['location'] }}</timeline-location>
-          <timeline-thanks>{{ timeline['thanks'] }}</timeline-thanks></timeline-sticky
-        >
-        <timeline-body>
-          <timeline-title>{{ timeline['title'] }}</timeline-title>
+          <span class="timeline-duration">{{ timeline['duration'] }}</span>
+          <span class="timeline-location">{{ timeline['location'] }}</span>
+          <span class="timeline-thanks">{{ timeline['thanks'] }}</span>
+        </div>
+        <div class="timeline-item-body">
+          <span class="timeline-title">{{ timeline['title'] }}</span>
           {% for (media, text) in timeline['body'] %}
           <div class="splide">
             <div class="splide__track">
@@ -37,11 +35,12 @@
               </ul>
             </div>
           </div>
-          <timeline-text>{{ text }}</timeline-text>
-          {% endfor %}</timeline-body
-        >
-      </row>
+          <span class="timeline-text">{{ text }}</span>
+          {% endfor %}
+        </div>
+      </div>
       {% endfor %}
-    </column>
-  </row></column
->{% endfor %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endfor %}{% endblock %}
