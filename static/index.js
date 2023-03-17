@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .parent()
       .parent()
       .next()
-      .find(".timeline-item-row")
+      .find(".item-row")
       .first()
       .attr("id");
     if (nextItemID) {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .parent()
       .parent()
       .prev()
-      .find(".timeline-item-row")
+      .find(".item-row")
       .last()
       .attr("id");
     if (prevItemID) {
@@ -87,29 +87,29 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function addNavigation() {
-    $(".timeline-theme-row").each(function () {
+    $(".theme-row").each(function () {
       currentThemeID = $(this).parent().attr("id");
-      // For each timeline-theme-arrow
+      // For each theme-arrow
       $(this)
-        .find(".timeline-theme-arrow")
+        .find(".theme-arrow")
         .first()
-        .attr({ href: "#" + prevTheme(currentThemeID), class: "timeline-theme-arrow timeline-up" });
+        .attr({ href: "#" + prevTheme(currentThemeID), class: "theme-arrow up" });
       $(this)
-        .find(".timeline-theme-arrow")
+        .find(".theme-arrow")
         .last()
-        .attr({ href: "#" + nextTheme(currentThemeID), class: "timeline-theme-arrow timeline-down" });
+        .attr({ href: "#" + nextTheme(currentThemeID), class: "theme-arrow down" });
     });
-    $(".timeline-item-row").each(function () {
+    $(".item-row").each(function () {
       currentItemID = $(this).attr("id");
-      // For each timeline-item-arrow
+      // For each item-arrow
       $(this)
-        .find(".timeline-item-arrow")
+        .find(".item-arrow")
         .first()
-        .attr({ href: "#" + prevItem(currentItemID), class: "timeline-theme-arrow timeline-left" });
+        .attr({ href: "#" + prevItem(currentItemID), class: "theme-arrow left" });
       $(this)
-        .find(".timeline-item-arrow")
+        .find(".item-arrow")
         .last()
-        .attr({ href: "#" + nextItem(currentItemID), class: "timeline-theme-arrow timeline-right" });
+        .attr({ href: "#" + nextItem(currentItemID), class: "theme-arrow right" });
     });
   }
 
@@ -123,18 +123,18 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
   function resizeSections() {
-    // Calculate total height for each timeline-theme-row once page is loaded
-    $(".timeline-theme-row").each(function () {
+    // Calculate total height for each theme-row once page is loaded
+    $(".theme-row").each(function () {
       let totalHeight = 0;
 
       // For each item row in column:
       $(this)
-        .find(".timeline-item-column .timeline-item-row")
+        .find(".item-column .item-row")
         .each(function () {
-          // Get the height of timeline-body
-          let bodyHeight = $(this).children("timeline-body").eq(0).outerHeight(true);
-          // Get the height of timeline-item-sticky
-          let stickyHeight = $(this).children(".timeline-item-sticky").eq(0).outerHeight(true);
+          // Get the height of body
+          let bodyHeight = $(this).children("body").eq(0).outerHeight(true);
+          // Get the height of item-sticky
+          let stickyHeight = $(this).children(".item-sticky").eq(0).outerHeight(true);
           // Set timeline row height depending on mobile or desktop
           if (($(window).width() > 1000) & ($(window).height() > 600)) {
             $(this).height(bodyHeight);
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
             totalHeight += bodyHeight + stickyHeight;
           }
         });
-      // Set the height of the timeline-theme-row to the total height
+      // Set the height of the theme-row to the total height
       $(this).height(totalHeight);
     });
   }
@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function addKeyNavigation() {
   $(document).on("keydown", function (event) {
     if (event.key === "ArrowDown") {
-      $(".timeline-down").each(function () {
+      $(".down").each(function () {
         if ($(this).isInViewport()) {
           // Scroll to the target anchor
           $("html, body").animate(
@@ -168,7 +168,7 @@ function addKeyNavigation() {
       });
     }
     if (event.key === "ArrowUp") {
-      $(".timeline-up").each(function () {
+      $(".up").each(function () {
         if ($(this).isInViewport()) {
           // Scroll to the target anchor
           $("html, body").animate(
@@ -183,7 +183,7 @@ function addKeyNavigation() {
       });
     }
     if (event.key === "ArrowRight") {
-      $(".timeline-right").each(function () {
+      $(".right").each(function () {
         if ($(this).isInViewport()) {
           // Scroll to the target anchor
           $("html, body").animate(
@@ -198,7 +198,7 @@ function addKeyNavigation() {
       });
     }
     if (event.key === "ArrowLeft") {
-      $(".timeline-left").each(function () {
+      $(".left").each(function () {
         if ($(this).isInViewport()) {
           // Scroll to the target anchor
           $("html, body").animate(

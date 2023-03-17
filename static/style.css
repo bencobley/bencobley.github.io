@@ -172,13 +172,13 @@ video {
 
 /* Homepage */
 
-.timeline-homepage {
+.homepage {
   height: 100vh;
   display: block;
   font-family: "space-grotesk", sans-serif;
 }
 
-.timeline-homepage-arrow {
+.homepage-arrow {
   position: absolute;
   font-size: 3rem;
   line-height: 3rem;
@@ -192,11 +192,11 @@ video {
   padding: 0.5rem;
 }
 
-.timeline-homepage-arrow:hover {
+.homepage-arrow:hover {
   color: var(--international-orange);
 }
 
-.timeline-me img {
+.me img {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
@@ -209,13 +209,13 @@ video {
 .timeline {
 }
 
-.timeline-row {
+.row {
   position: relative;
   display: block;
   width: 100%;
 }
 
-.timeline-column {
+.column {
   display: block;
   position: relative;
   float: left;
@@ -223,28 +223,28 @@ video {
   width: 100%;
 }
 
-.timeline-arrow {
+.arrow {
   font-family: "space-mono", monospace;
   color: #e0e0e0;
   text-decoration: none;
   padding: 0.5rem;
 }
 
-.timeline-arrow:hover {
+.arrow:hover {
   color: var(--international-orange);
 }
 
 /* Timeline theme (eg. 'Experience' theme) */
 
-.timeline-theme-row {
+.theme-row {
 }
 
-.timeline-theme-column {
+.theme-column {
   width: 5%;
   padding-right: 5%;
 }
 
-.timeline-theme-sticky {
+.theme-sticky {
   margin-bottom: 1rem;
   position: -webkit-sticky;
   position: sticky;
@@ -263,22 +263,22 @@ video {
 
 /* Timeline items (eg. 'Imperial' item) */
 
-.timeline-item-column {
+.item-column {
   width: 90%;
 }
 
-.timeline-item-row {
+.item-row {
 }
 
-.timeline-item-sticky {
+.item-sticky {
 }
 
-.timeline-item-body {
+.item-body {
 }
 
 /* Timeline elements (eg. 'Title') */
 
-.timeline-title {
+.title {
   display: none; /* Hide on mobile */
   font-family: "space-mono", monospace;
   font-weight: bold;
@@ -288,21 +288,21 @@ video {
   padding-bottom: 2rem;
 }
 
-.timeline-text {
+.text {
   display: block;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
-.timeline-text a::after {
+.text a::after {
   content: ">>";
 }
 
-.timeline-text a:hover {
+.text a:hover {
   font-style: italic;
 }
 
-.timeline-shorttitle {
+.shorttitle {
   display: block;
   font-family: "space-mono", monospace;
   font-weight: bold;
@@ -311,7 +311,7 @@ video {
   padding-top: 2rem;
 }
 
-.timeline-date {
+.date {
   display: block;
   font-family: "space-mono", monospace;
   font-weight: bold;
@@ -319,7 +319,7 @@ video {
   font-size: 2rem;
 }
 
-.timeline-subtitle {
+.subtitle {
   display: block;
   font-size: 1.3rem;
   font-family: "space-grotesk", sans-serif;
@@ -327,28 +327,28 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.timeline-highlights {
+.highlights {
   display: block;
   font-family: "hyperlegible", sans-serif;
   font-style: italic;
   margin-bottom: 0.5rem;
 }
 
-.timeline-highlights::before {
+.highlights::before {
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
   content: "Highlights:";
 }
 
-.timeline-highlights a::after {
+.highlights a::after {
   content: ">>";
 }
 
-.timeline-highlights a:hover {
+.highlights a:hover {
   font-style: none;
 }
 
-.timeline-duration {
+.duration {
   display: block;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
@@ -356,7 +356,7 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.timeline-location {
+.location {
   display: block;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
@@ -364,11 +364,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.timeline-location::before {
+.location::before {
   content: "@ ";
 }
 
-.timeline-thanks {
+.thanks {
   display: block;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
@@ -376,13 +376,13 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.timeline-thanks::before {
+.thanks::before {
   content: "With thanks to ";
 }
 
 /* Timeline footer */
 
-.timeline-footer {
+.footer {
   display: block;
   text-align: end;
   font-family: "space-grotesk", sans-serif;
@@ -391,35 +391,35 @@ video {
 /* DESKTOP-ONLY */
 
 @media only screen and ((min-width: 1000px) and (min-height: 600px)) {
-  .timeline-homepage {
+  .homepage {
     font-size: 1.4rem;
   }
 
-  .timeline-title {
+  .title {
     display: block;
     font-size: 3.5rem;
   }
 
-  .timeline-shorttitle {
+  .shorttitle {
     display: none;
   }
 
-  .timeline-date {
+  .date {
     font-size: 3.5rem;
     padding-top: 3.5rem;
     margin-bottom: 2rem;
   }
 
-  .timeline-theme-row {
+  .theme-row {
     margin-bottom: 75px;
   }
 
-  .timeline-theme-sticky {
+  .theme-sticky {
     font-size: 2.5rem;
     padding-top: 5rem;
   }
 
-  .timeline-item-sticky {
+  .item-sticky {
     width: 28%;
     display: block;
     margin-bottom: 1rem;
@@ -429,7 +429,7 @@ video {
     left: 0;
   }
 
-  .timeline-item-body {
+  .item-body {
     position: absolute;
     top: 0;
     left: 35%;
