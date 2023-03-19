@@ -1,36 +1,43 @@
-{% extends 'base.html' %} {% block container %} {% for theme, content in timelines.items() %}
+{% extends 'base.html' %} {% block container %}
 
-<div class="column timeline" id="{{ theme }}">
-  <div class="row theme-row">
+<!-- This timeline.html file extends the base.html file, and is where the timeline content is generated. 
+  The Jinja2 templating language is used to generate the HTML content from the data in the CSV files. -->
+
+{% for theme, articles in articles_by_theme.items() %}
+<!-- THEME -->
+<div class="column">
+  <div class="row theme-row" id="{{ theme }}">
     <div class="column theme-column">
-      <div class="theme-sticky"><a class="arrow"><</a>{{ theme }}<a class="arrow">></a></div>
+      <div class="theme-sticky"><a class="arrow up">&#60;</a>{{ theme }}<a class="arrow down">&#62;</a></div>
     </div>
-    <div class="column item-column">
-      {% for identifier, timeline in content.items() %}
-      <div class="row item-row" id="{{ identifier }}">
-        <div class="item-sticky">
-          <span class="shorttitle">{{ timeline['shorttitle'] }}</span>
-          <span class="date"><a class="arrow"><</a>{{ timeline['date'] }}<a class="arrow">></a></span>
-          <span class="subtitle">{{ timeline['subtitle'] }}</span>
+    <!-- ARTICLES -->
+    <div class="column article-column">
+      {% for article_ID, article in articles.items() %}
+      <!-- ARTICLE -->
+      <div class="row article-row" id="{{ article_ID }}">
+        <div class="article-sticky">
+          <span class="shorttitle">{{ article['shorttitle'] }}</span>
+          <span class="date"><a class="arrow left">&#60;</a>{{ article['date'] }}<a class="arrow right">&#62;</a></span>
+          <span class="subtitle">{{ article['subtitle'] }}</span>
           <span class="highlights">
             <ul>
-              {% for highlight in timeline['highlights'] %}
+              {% for highlight in article['highlights'] %}
               <li>{{ highlight }}</li>
               {% endfor %}
             </ul></span
           >
-          <span class="duration">{{ timeline['duration'] }}</span>
-          <span class="location">{{ timeline['location'] }}</span>
-          <span class="thanks">{{ timeline['thanks'] }}</span>
+          <span class="duration">{{ article['duration'] }}</span>
+          <span class="location">{{ article['location'] }}</span>
+          <span class="thanks">{{ article['thanks'] }}</span>
         </div>
-        <div class="item-body">
-          <span class="title">{{ timeline['title'] }}</span>
-          {% for (media, text) in timeline['body'] %}
+        <div class="article-body">
+          <span class="title">{{ article['title'] }}</span>
+          {% for (media, text) in article['body'] %}
           <div class="splide">
             <div class="splide__track">
               <ul class="splide__list">
-                {% for item in media %}
-                <li class="splide__slide">{{ item }}</li>
+                {% for article in media %}
+                <li class="splide__slide">{{ article }}</li>
                 {% endfor %}
               </ul>
             </div>
