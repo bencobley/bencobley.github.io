@@ -16,11 +16,12 @@ def home():
     with open("content.csv", "w", encoding="latin1") as f:
         f.write(response.text)
 
-    input = [*DictReader(open('content.csv'))]
+    content = [*DictReader(open('content.csv'))]
 
-    timelines = {}
+    articles_by_theme = {}
 
-    for d in input:
+    # Where d is a dict of each row in the csv:
+    for d in content:
 
         # Remove empty keys and values
         d = {key: val for key, val in d.items() if val}
@@ -35,44 +36,52 @@ def home():
         # d.update((key, val.strip("\n").split("\n"))
         #          for key, val in d.items() if "\n" in val)
 
-        identifier = d["tag"]
-        output = {}
+        # Create article dict and article ID
+        article = {}
+        article_ID = d["hash"]
 
         # Filter columns for template fields
-        standard_content = ["theme", "tag", "title", "shorttitle",
-                            "date", "subtitle", "duration", "location", "thanks", "text1", "text2", "text3", "text4", "text5"]
-        output.update((item, d[item].strip("\n"))
-                      for item in standard_content if item in d.keys())
+        standard_content = ["theme", "hash", "title", "shorttitle", "date",
+                            "subtitle", "duration", "location", "thanks",
+                            "text1", "text2", "text3", "text4", "text5"]
+        article.update((item, d[item].strip("\n"))
+                       for item in standard_content if item in d.keys())
 
         # Create theme subdict
         theme = str(d["theme"])
-        if theme not in timelines.keys():
-            timelines[theme] = {}
+        if theme not in articles_by_theme.keys():
+            articles_by_theme[theme] = {}
 
         # Filter columns for template fields to be converted to lists using \n new lines
         line_separated_content = [
             "highlights", "media1", "media2", "media3", "media4", "media5"]
-        output.update((item, d[item].strip("\n").split("\n"))
-                      for item in line_separated_content if item in d.keys())
+        article.update((item, d[item].strip("\n").split("\n"))
+                       for item in line_separated_content if item in d.keys())
 
         # Filter columns for media and text
-        media = [val for key, val in output.items() if "media" in key]
-        text = [val for key, val in output.items() if "text" in key]
-        output["body"] = list(zip(media, text))
+        media = [val for key, val in article.items() if "media" in key]
+        text = [val for key, val in article.items() if "text" in key]
+        article["body"] = list(zip(media, text))
 
-        # Add the above to output dict
-        timelines[theme][identifier] = output
+        # Add the above to article dict
+        articles_by_theme[theme][article_ID] = article
 
+    # Write to json file for debugging
     with open("debug.json", "w") as write_file:
-        dump(timelines, write_file, indent=4)
+        dump(articles_by_theme, write_file, indent=4)
 
-    rendered_output = render_template("timeline.html", timelines=timelines)
+    # Render template
+    rendered_output = render_template(
+        "timeline.html", articles_by_theme=articles_by_theme)
 
+    # Write to html file for static hosting
     with open("index.html", "w") as write_file:
         write_file.write(rendered_output)
 
+    # Return rendered template for local hosting
     return rendered_output
 
 
 if __name__ == "__main__":
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(debug=True)
