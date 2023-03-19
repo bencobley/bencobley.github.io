@@ -6,7 +6,7 @@
   5. =MEDIA
   6. =HOMEPAGE
   7. =THEME
-  8. =ITEMS
+  8. =ARTICLES
   9. =TEXT
   10. =FOOTER
   11. =DESKTOP-ONLY
@@ -264,19 +264,19 @@ video {
   font-size: 1.5rem;
 }
 
-/* ===ITEMS=== */
+/* ===ARTICLES=== */
 
-.item-column {
+.article-column {
   width: 90%;
 }
 
-.item-row {
+.article-row {
 }
 
-.item-sticky {
+.article-sticky {
 }
 
-.item-body {
+.article-body {
 }
 
 /* ===TEXT=== */
@@ -411,9 +411,9 @@ video {
     padding-top: 5rem;
   }
 
-  /* =ITEMS= */
+  /* =ARTICLES= */
 
-  .item-sticky {
+  .article-sticky {
     width: 28%;
     display: block;
     margin-bottom: 1rem;
@@ -423,7 +423,7 @@ video {
     left: 0;
   }
 
-  .item-body {
+  .article-body {
     position: absolute;
     top: 0;
     left: 35%;
