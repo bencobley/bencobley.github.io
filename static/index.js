@@ -14,8 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize splide for each splide class
     var elms = document.getElementsByClassName("splide");
     for (var i = 0; i < elms.length; i++) {
-      var splide = new Splide(elms[i], { arrows: false, heightRatio: 0.6, lazyLoad: "sequential" });
-      splide.mount();
+      var splide = new Splide(elms[i], { arrows: false, lazyLoad: "sequential" });
+      splide.mount(window.splide.Extensions);
+      splide.on("lazyload:loaded", function () {
+        resizeSections();
+      });
     }
   }
 
