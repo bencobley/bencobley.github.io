@@ -103,7 +103,7 @@ body {
   margin: auto;
   background: var(--very-white);
   font-family: "hyperlegible", sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -118,7 +118,7 @@ a {
   font-family: "space-mono", monospace;
   color: var(--international-orange);
   text-decoration: underline;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.07rem;
 }
 
 ul {
@@ -206,6 +206,8 @@ video {
 
 .homepage {
   height: 100vh;
+  max-width: 1100px;
+  margin: auto;
   display: block;
   font-family: "space-grotesk", sans-serif;
 }
@@ -213,9 +215,9 @@ video {
 .homepage-arrow {
   position: absolute;
   font-size: 3rem;
-  font-weight: bold;
   line-height: 3rem;
   width: 3rem;
+  font-weight: bold;
   left: calc(50% - 1.5rem);
   writing-mode: vertical-rl;
   text-orientation: mixed;
@@ -233,7 +235,7 @@ video {
   height: 5rem;
   width: 5rem;
   border-radius: 50%;
-  margin-top: 5rem;
+  margin-top: 4rem;
   margin-bottom: 1rem;
 }
 
@@ -244,7 +246,7 @@ video {
 
 .theme-column {
   width: 5%;
-  padding-right: 5%;
+  padding-right: 3%;
 }
 
 .theme-sticky {
@@ -267,7 +269,7 @@ video {
 /* ===ARTICLES=== */
 
 .article-column {
-  width: 90%;
+  width: 92%;
 }
 
 .article-row {
@@ -287,8 +289,9 @@ video {
   font-weight: bold;
   color: var(--international-orange);
   font-size: 3.5rem;
-  padding-top: 3.5rem;
+  padding-top: 3rem;
   padding-bottom: 2rem;
+  line-height: 1;
 }
 
 .text {
@@ -330,6 +333,26 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.duration {
+  display: block;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  display: block;
+  font-family: "space-grotesk", sans-serif;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.location::before {
+  content: "@ ";
+}
+
 .highlights {
   display: block;
   font-family: "hyperlegible", sans-serif;
@@ -349,26 +372,6 @@ video {
 
 .highlights a:hover {
   font-style: none;
-}
-
-.duration {
-  display: block;
-  font-family: "space-grotesk", sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.location {
-  display: block;
-  font-family: "space-grotesk", sans-serif;
-  font-weight: bold;
-  font-style: italic;
-  margin-bottom: 0.5rem;
-}
-
-.location::before {
-  content: "@ ";
 }
 
 .thanks {
@@ -414,7 +417,7 @@ video {
   /* =ARTICLES= */
 
   .article-sticky {
-    width: 28%;
+    width: 27%;
     display: block;
     margin-bottom: 1rem;
     position: -webkit-sticky;
@@ -424,9 +427,9 @@ video {
   }
 
   .article-body {
-    position: absolute;
-    top: 0;
     left: 35%;
+    top: 0;
+    position: absolute;
   }
 
   /* =TEXT= */
@@ -442,7 +445,7 @@ video {
 
   .date {
     font-size: 3.5rem;
-    padding-top: 3.5rem;
+    padding-top: 3rem;
     margin-bottom: 2rem;
   }
 }
