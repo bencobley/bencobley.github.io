@@ -14,7 +14,26 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize splide for each splide class
     var elms = document.getElementsByClassName("splide");
     for (var i = 0; i < elms.length; i++) {
-      var splide = new Splide(elms[i], { arrows: false, lazyLoad: "sequential" });
+      var splide = new Splide(elms[i], {
+        arrows: false,
+        lazyLoad: "sequential",
+        video: {
+          playerOptions: {
+            youtube: {
+              loop: false,
+              mute: false,
+            },
+            vimeo: {
+              loop: false,
+              mute: false,
+            },
+            htmlVideo: {
+              loop: true,
+              mute: true,
+            },
+          },
+        },
+      });
       splide.mount(window.splide.Extensions);
       splide.on("lazyload:loaded", function () {
         resizeSections();
