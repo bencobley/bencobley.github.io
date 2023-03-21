@@ -36,9 +36,7 @@
           <div class="splide">
             <div class="splide__track">
               <ul class="splide__list">
-                {% for article in media %}
-                <li class="splide__slide">{{ article }}</li>
-                {% endfor %}
+                {% for item in media %} {{ item }} {% endfor %}
               </ul>
             </div>
           </div>
