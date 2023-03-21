@@ -12,67 +12,109 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    response = get(CONTENT_URL)
-    with open("content.csv", "w", encoding="latin1") as f:
-        f.write(response.text)
+    # response = get(CONTENT_URL)
+    # with open("content.csv", "w", encoding="latin1") as f:
+    #     f.write(response.text)
 
-    input = [*DictReader(open('content.csv'))]
+    content = [*DictReader(open('content.csv'))]
 
-    timelines = {}
+    articles_by_theme = {}
 
-    for d in input:
+    # Where row is a dict of the csv row:
+    for row in content:
 
-        # Remove empty keys and values
-        d = {key: val for key, val in d.items() if val}
+        # Remove empty keys and values in row
+        row = {key: val for key, val in row.items() if val}
 
-        # Remove trailing spaces and new lines
-        d = {key: val.strip().strip("\n") for key, val in d.items()}
+        # Remove trailing spaces and new lines in row
+        row = {key: val.strip().strip("\n") for key, val in row.items()}
 
-        # Make markup safe
-        d.update((key, Markup(val)) for key, val in d.items())
+        # Create article dict and article ID
+        article = {}
+        article_ID = row["hash"]
 
-        # Split new lines into lists if \n in dict value
-        # d.update((key, val.strip("\n").split("\n"))
-        #          for key, val in d.items() if "\n" in val)
-
-        identifier = d["tag"]
-        output = {}
-
-        # Filter columns for template fields
-        standard_content = ["theme", "tag", "title", "shorttitle",
-                            "date", "subtitle", "duration", "location", "thanks", "text1", "text2", "text3", "text4", "text5"]
-        output.update((item, d[item].strip("\n"))
-                      for item in standard_content if item in d.keys())
+        # Filter column for template fields
+        standard_content = ["theme", "hash", "title", "shorttitle", "date",
+                            "subtitle", "duration", "location", "thanks",
+                            "text1", "text2", "text3", "text4", "text5"]
+        article.update((field, row[field].strip("\n"))
+                       for field in standard_content if field in row.keys())
 
         # Create theme subdict
-        theme = str(d["theme"])
-        if theme not in timelines.keys():
-            timelines[theme] = {}
+        theme = str(row["theme"])
+        if theme not in articles_by_theme.keys():
+            articles_by_theme[theme] = {}
 
-        # Filter columns for template fields to be converted to lists using \n new lines
+        # Filter column for template fields to be converted to lists using \n new lines
         line_separated_content = [
             "highlights", "media1", "media2", "media3", "media4", "media5"]
-        output.update((item, d[item].strip("\n").split("\n"))
-                      for item in line_separated_content if item in d.keys())
 
-        # Filter columns for media and text
-        media = [val for key, val in output.items() if "media" in key]
-        text = [val for key, val in output.items() if "text" in key]
-        output["body"] = list(zip(media, text))
+        for field in line_separated_content:
+            if field in row.keys():
+                list_of_strings = row[field].strip("\n").split("\n")
 
-        # Add the above to output dict
-        timelines[theme][identifier] = output
+                # Format media strings
+                for i in range(len(list_of_strings)):
+                    s = list_of_strings[i]
 
+                    # Populate <img> tags
+                    if s.endswith((".png", ".jpg", ".gif")):
+                        prefix = "<li class='splide__slide'><img data-splide-lazy='static/img/"
+                        suffix = "'/></li>"
+                        s = prefix + s + suffix
+
+                    # Populate <video> tags
+                    if s.endswith((".mp4", ".mov")):
+                        preview = s.strip(".mp4").strip(".mov") + ".png"
+                        prefix = "<li class='splide__slide' data-splide-html-video='static/img/"
+                        suffix = "'><img src='static/img/" + preview + "'></li>"
+                        s = prefix + s + suffix
+
+                    # Populate YouTube elements
+                    if s.startswith("https://www.youtube.com/watch?v="):
+                        preview = s.strip(
+                            "https://www.youtube.com/watch?v=") + ".png"
+                        prefix = "<li class='splide__slide' data-splide-youtube='"
+                        suffix = "'><img src='static/img/" + preview + "'></li>"
+                        s = prefix + s + suffix
+
+                    # Populate Vimeo elements
+                    if s.startswith("https://www.vimeo.com/"):
+                        preview = s.strip(
+                            "https://www.vimeo.com/") + ".png"
+                        prefix = "<li class='splide__slide' data-splide-vimeo='"
+                        suffix = "'><img src='static/img/" + preview + "'></li>"
+                        s = prefix + s + suffix
+
+                    # Make media markup safe
+                    list_of_strings[i] = Markup(s)
+                article[field] = list_of_strings
+
+        # Filter column for media and text
+        media = [val for key, val in article.items() if "media" in key]
+        # Make text markup safe
+        text = [Markup(val) for key, val in article.items() if "text" in key]
+        article["body"] = list(zip(media, text))
+
+        # Add the above to article dict
+        articles_by_theme[theme][article_ID] = article
+
+    # Write to json file for debugging
     with open("debug.json", "w") as write_file:
-        dump(timelines, write_file, indent=4)
+        dump(articles_by_theme, write_file, indent=4)
 
-    rendered_output = render_template("timeline.html", timelines=timelines)
+    # Render template
+    rendered_output = render_template(
+        "timeline.html", articles_by_theme=articles_by_theme)
 
+    # Write to html file for static hosting
     with open("index.html", "w") as write_file:
         write_file.write(rendered_output)
 
+    # Return rendered template for local hosting
     return rendered_output
 
 
 if __name__ == "__main__":
+    # app.config['TEMPLATES_AUTO_RELOAD'] = True
     app.run(debug=True)
