@@ -194,6 +194,7 @@ video {
 
 .homepage {
   height: 100vh;
+  padding-bottom: 5rem;
   max-width: 1100px;
   margin: auto;
   display: block;
@@ -238,20 +239,20 @@ video {
 }
 
 .theme-sticky {
-  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   position: -webkit-sticky;
   position: sticky;
   width: 100%;
   top: 0;
   left: 0;
+  font-size: 1.5rem;
   font-family: "space-mono", monospace;
   font-weight: bold;
   white-space: nowrap;
   text-transform: uppercase;
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  padding-top: 3rem;
-  font-size: 1.5rem;
 }
 
 /* ===ARTICLES=== */
@@ -261,25 +262,25 @@ video {
 }
 
 .article-row {
+  height: 2500px; /* Set initial height - will be overriden by JS */
 }
 
 .article-sticky {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  max-width: 15rem; /* Mobile only */
 }
 
 .article-body {
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
 }
 
 /* ===TEXT=== */
 
 .title {
+  /* Desktop only */
   display: none; /* Hide on mobile */
-  font-family: "space-mono", monospace;
-  font-weight: bold;
-  color: var(--international-orange);
-  font-size: 3.5rem;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-  line-height: 1;
 }
 
 .text {
@@ -297,37 +298,40 @@ video {
 }
 
 .shorttitle {
-  display: block;
+  /* Mobile only */
+  display: block; /* Display on mobile */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  line-height: 1;
   font-family: "space-mono", monospace;
   font-weight: bold;
   color: var(--international-orange);
-  font-size: 2.5rem;
-  padding-top: 2rem;
 }
 
 .date {
   display: block;
+  font-size: 2.5rem; /* Mobile only */
   font-family: "space-mono", monospace;
   font-weight: bold;
   font-style: italic;
-  font-size: 2rem;
   line-height: 1;
 }
 
 .subtitle {
   display: block;
+  margin-bottom: 0.5rem;
   font-size: 1.3rem;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
-  margin-bottom: 0.5rem;
 }
 
 .duration {
   display: block;
+  margin-bottom: 0.5rem;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
   font-style: italic;
-  margin-bottom: 0.5rem;
 }
 
 .location {
@@ -344,9 +348,9 @@ video {
 
 .highlights {
   display: block;
+  margin-bottom: 0.5rem;
   font-family: "hyperlegible", sans-serif;
   font-style: italic;
-  margin-bottom: 0.5rem;
 }
 
 .highlights::before {
@@ -368,7 +372,6 @@ video {
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
   font-style: italic;
-  margin-bottom: 0.5rem;
 }
 
 .thanks::before {
@@ -394,21 +397,20 @@ video {
 
   /* =THEMES= */
 
-  .theme-row {
-    margin-bottom: 75px;
-  }
-
   .theme-sticky {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
     font-size: 2.5rem;
-    padding-top: 3.5rem;
   }
 
   /* =ARTICLES= */
 
   .article-sticky {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
     width: 27%;
+    max-width: 100%;
     display: block;
-    margin-bottom: 1rem;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -416,6 +418,8 @@ video {
   }
 
   .article-body {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
     left: 35%;
     top: 0;
     position: absolute;
@@ -424,18 +428,24 @@ video {
   /* =TEXT= */
 
   .title {
-    display: block;
+    /* Desktop only */
+    display: block; /* Display on desktop */
+    padding-bottom: 2rem;
+    font-family: "space-mono", monospace;
+    font-weight: bold;
+    color: var(--international-orange);
     font-size: 3.5rem;
+    line-height: 1;
   }
 
   .shorttitle {
-    display: none;
+    /* Mobile only */
+    display: none; /* Hide on desktop */
   }
 
   .date {
-    font-size: 3.5rem;
-    padding-top: 3rem;
     margin-bottom: 2rem;
+    font-size: 3.5rem;
   }
 }
 
