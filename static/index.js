@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // For each article row in column:
       $(this)
-        .find(".article-column .article-row")
+        .find(".article-row")
         .each(function () {
           // Get the height of body
           let bodyHeight = $(this).children(".article-body").eq(0).outerHeight(true);
