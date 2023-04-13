@@ -46,6 +46,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU GENERAL PUBLIC LICENSE](https://github.com/bencobley/bencobley.github.io/blob/main/LICENSE.md)
+
 
 
