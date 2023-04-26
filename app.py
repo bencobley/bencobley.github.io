@@ -58,13 +58,13 @@ def home():
                     s = list_of_strings[i]
 
                     # Populate <img> tags
-                    if s.endswith((".png", ".jpg", ".gif")):
+                    if s.endswith((".png", ".PNG", ".jpg", ".jpeg", ".JPG", ".JPEG", ".gif", ".GIF")):
                         prefix = "<li class='splide__slide'><img data-splide-lazy='static/img/"
                         suffix = "'/></li>"
                         s = prefix + s + suffix
 
                     # Populate <video> tags
-                    if s.endswith((".mp4", ".mov")):
+                    if s.endswith((".mp4", ".MP4", ".mov", ".MOV")):
                         preview = s.strip(".mp4").strip(".mov") + ".png"
                         prefix = "<li class='splide__slide' data-splide-html-video='static/img/"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
