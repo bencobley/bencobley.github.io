@@ -10,7 +10,6 @@
   9. =TEXT
   10. =FOOTER
   11. =DESKTOP-ONLY
-  12. =ANIMATIONS
 */
 
 /* ===GLOBAL=== */
@@ -104,9 +103,6 @@ body {
   background: var(--very-white);
   font-family: "hyperlegible", sans-serif;
   line-height: 1.65;
-  animation: fadeInAnimation ease 0.5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
 }
 
 ::selection {
@@ -156,22 +152,6 @@ ul {
 
 /* ===MEDIA=== */
 
-.splide {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.splide button {
-  background: var(--space-cadet);
-  opacity: 0.8;
-}
-
-.splide button.is-active {
-  background: var(--international-orange);
-  opacity: 0.8;
-}
-
 img {
   border-radius: 1.5rem;
   width: 100%;
@@ -188,6 +168,15 @@ video {
 
 .splide__video__wrapper {
   border-radius: 1.5rem;
+}
+
+.splide__arrow {
+  transition: opacity 0.3s ease;
+}
+
+.splide__arrow:disabled {
+  opacity: 0 !important;
+  pointer-events: none;
 }
 
 /* ===HOMEPAGE=== */
@@ -446,16 +435,5 @@ video {
   .date {
     margin-bottom: 2rem;
     font-size: 3.5rem;
-  }
-}
-
-/* ===ANIMATION=== */
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }
