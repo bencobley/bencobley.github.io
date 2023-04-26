@@ -65,23 +65,24 @@ def home():
 
                     # Populate <video> tags
                     if s.endswith((".mp4", ".MP4", ".mov", ".MOV")):
-                        preview = s.strip(".mp4").strip(".mov") + ".png"
+                        preview = s.replace(".mp4", "").replace(
+                            ".mov", "") + ".png"
                         prefix = "<li class='splide__slide' data-splide-html-video='static/img/"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
                         s = prefix + s + suffix
 
                     # Populate YouTube elements
                     if s.startswith("https://www.youtube.com/watch?v="):
-                        preview = s.strip(
-                            "https://www.youtube.com/watch?v=") + ".png"
+                        preview = s.replace(
+                            "https://www.youtube.com/watch?v=", "") + ".png"
                         prefix = "<li class='splide__slide' data-splide-youtube='"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
                         s = prefix + s + suffix
 
                     # Populate Vimeo elements
                     if s.startswith("https://www.vimeo.com/"):
-                        preview = s.strip(
-                            "https://www.vimeo.com/") + ".png"
+                        preview = s.replace(
+                            "https://www.vimeo.com/", "") + ".png"
                         prefix = "<li class='splide__slide' data-splide-vimeo='"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
                         s = prefix + s + suffix
