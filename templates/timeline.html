@@ -19,6 +19,11 @@
           <span class="date"><a class="arrow left">&#60;</a>{{ article['date'] }}<a class="arrow right">&#62;</a></span>
           <span class="shorttitle">{{ article['shorttitle'] }}</span>
           <span class="subtitle">{{ article['subtitle'] }}</span>
+          <span class="skills">
+            {% for skill in article['skills'] %}
+            <span class="skill">{{ skill }}</span>
+            {% endfor %}
+          </span>
           <span class="duration">{{ article['duration'] }}</span>
           <span class="location">{{ article['location'] }}</span>
           <span class="highlights">
