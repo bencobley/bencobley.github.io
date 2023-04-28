@@ -31,7 +31,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: calc(15px + 0.390625vw);
+  font-size: calc(14.5px + 0.390625vw);
 }
 
 /* ===FONTS=== */
@@ -309,10 +309,27 @@ video {
 
 .subtitle {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   font-size: 1.3rem;
+  line-height: 1.3;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
+}
+
+.skills {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: "hyperlegible", sans-serif;
+  font-style: italic;
+  line-height: 1.9;
+}
+
+.skill {
+  background-color: #e0e0e0;
+  white-space: nowrap;
+  padding: 0.2rem;
+  padding-right: 0.3rem;
+  border-radius: 0.3rem;
 }
 
 .duration {
@@ -325,10 +342,10 @@ video {
 
 .location {
   display: block;
+  margin-bottom: 0.5rem;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
   font-style: italic;
-  margin-bottom: 0.5rem;
 }
 
 .location::before {
@@ -338,6 +355,7 @@ video {
 .highlights {
   display: block;
   margin-bottom: 0.5rem;
+  line-height: 1.5;
   font-family: "hyperlegible", sans-serif;
   font-style: italic;
 }
@@ -353,7 +371,7 @@ video {
 }
 
 .highlights a:hover {
-  font-style: none;
+  text-decoration: none;
 }
 
 .thanks {
@@ -387,7 +405,7 @@ video {
   /* =THEMES= */
 
   .theme-sticky {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     font-size: 2.5rem;
   }
@@ -395,7 +413,7 @@ video {
   /* =ARTICLES= */
 
   .article-sticky {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     width: 27%;
     max-width: 100%;
@@ -407,7 +425,7 @@ video {
   }
 
   .article-body {
-    padding-top: 2.5rem;
+    padding-top: 2rem;
     padding-bottom: 5rem;
     left: 35%;
     top: 0;
@@ -423,7 +441,7 @@ video {
     font-family: "space-mono", monospace;
     font-weight: bold;
     color: var(--international-orange);
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     line-height: 1;
   }
 
@@ -433,7 +451,7 @@ video {
   }
 
   .date {
-    margin-bottom: 2rem;
-    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 3.75rem;
   }
 }
