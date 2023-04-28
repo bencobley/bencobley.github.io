@@ -274,8 +274,8 @@ video {
 
 .text {
   display: block;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .text a::after {
@@ -437,7 +437,7 @@ video {
   .title {
     /* Desktop only */
     display: block; /* Display on desktop */
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
     font-family: "space-mono", monospace;
     font-weight: bold;
     color: var(--international-orange);
@@ -451,7 +451,7 @@ video {
   }
 
   .date {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     font-size: 3.75rem;
   }
 }
