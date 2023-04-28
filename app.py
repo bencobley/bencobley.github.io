@@ -12,15 +12,17 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    # response = get(CONTENT_URL)
-    # with open("content.csv", "w", encoding="latin1") as f:
-    #     f.write(response.text)
 
+    # Get content from Google Sheets
+    response = get(CONTENT_URL)
+    with open("content.csv", "w", encoding="latin1") as f:
+        f.write(response.text)
     content = [*DictReader(open('content.csv'))]
 
+    # Create dict of articles by theme
     articles_by_theme = {}
 
-    # Where row is a dict of the csv row:
+    # Where row is a dict of each csv row:
     for row in content:
 
         # Remove empty keys and values in row
@@ -47,7 +49,7 @@ def home():
 
         # Filter column for template fields to be converted to lists using \n new lines
         line_separated_content = [
-            "highlights", "media1", "media2", "media3", "media4", "media5"]
+            "highlights", "skills", "media1", "media2", "media3", "media4", "media5"]
 
         for field in line_separated_content:
             if field in row.keys():
@@ -57,31 +59,38 @@ def home():
                 for i in range(len(list_of_strings)):
                     s = list_of_strings[i]
 
+                    # Populate skills <span> tags
+                    if field == "skills":
+                        prefix = "<span class='skill'>"
+                        suffix = "</span>"
+                        s = prefix + s + suffix
+
                     # Populate <img> tags
-                    if s.endswith((".png", ".jpg", ".gif")):
+                    if s.endswith((".png", ".PNG", ".jpg", ".jpeg", ".JPG", ".JPEG", ".gif", ".GIF")):
                         prefix = "<li class='splide__slide'><img data-splide-lazy='static/img/"
                         suffix = "'/></li>"
                         s = prefix + s + suffix
 
                     # Populate <video> tags
-                    if s.endswith((".mp4", ".mov")):
-                        preview = s.strip(".mp4").strip(".mov") + ".png"
+                    if s.endswith((".mp4", ".MP4", ".mov", ".MOV")):
+                        preview = s.replace(".mp4", "").replace(
+                            ".mov", "") + ".png"
                         prefix = "<li class='splide__slide' data-splide-html-video='static/img/"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
                         s = prefix + s + suffix
 
                     # Populate YouTube elements
                     if s.startswith("https://www.youtube.com/watch?v="):
-                        preview = s.strip(
-                            "https://www.youtube.com/watch?v=") + ".png"
+                        preview = s.replace(
+                            "https://www.youtube.com/watch?v=", "") + ".png"
                         prefix = "<li class='splide__slide' data-splide-youtube='"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
                         s = prefix + s + suffix
 
                     # Populate Vimeo elements
                     if s.startswith("https://www.vimeo.com/"):
-                        preview = s.strip(
-                            "https://www.vimeo.com/") + ".png"
+                        preview = s.replace(
+                            "https://www.vimeo.com/", "") + ".png"
                         prefix = "<li class='splide__slide' data-splide-vimeo='"
                         suffix = "'><img src='static/img/" + preview + "'></li>"
                         s = prefix + s + suffix

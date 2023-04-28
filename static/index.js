@@ -15,8 +15,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var elms = document.getElementsByClassName("splide");
     for (var i = 0; i < elms.length; i++) {
       var splide = new Splide(elms[i], {
-        arrows: false,
+        arrows: true,
+        perPage: 1,
         lazyLoad: "sequential",
+        interval: 5000,
+        autoplay: "pause",
+        intersection: {
+          inView: {
+            autoplay: true,
+          },
+          outView: {
+            autoplay: false,
+          },
+        },
         video: {
           playerOptions: {
             youtube: {
