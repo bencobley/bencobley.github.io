@@ -379,6 +379,7 @@ video {
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
   font-style: italic;
+  margin-bottom: 3rem;
 }
 
 .thanks::before {
