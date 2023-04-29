@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeSections();
     addNavigation();
     addKeyNavigation();
-    // updateHashOnScroll();
   });
 
   function splides() {
@@ -48,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
       splide.mount(window.splide.Extensions);
       splide.on("lazyload:loaded", function () {
         resizeSections();
+        location.href = location.hash;
       });
     }
   }
@@ -194,15 +194,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
-  // function updateHashOnScroll() {
-  //   $(document).on("scroll", function () {
-  //     $(".article-row").each(function () {
-  //       if ($(this).offset().top < window.pageYOffset + 10 && $(this).offset().top + $(this).height() > window.pageYOffset + 10) {
-  //         var data = $(this).attr("id");
-  //         window.location.hash = data;
-  //       }
-  //     });
-  //   });
-  // }
 });
