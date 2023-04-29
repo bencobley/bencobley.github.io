@@ -40,13 +40,11 @@ html {
   font-family: "space-grotesk";
   src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "space-grotesk";
   src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
@@ -54,27 +52,23 @@ html {
   src: url("fonts/SpaceMono-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic, oblique;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "space-mono";
   src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "space-mono";
   src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
   font-style: italic, oblique;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "space-mono";
   src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
-  font-display: swap;
 }
 
 @font-face {
@@ -82,27 +76,23 @@ html {
   src: url("fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic, oblique;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
   font-weight: bold;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Italic.ttf") format("truetype");
   font-style: italic, oblique;
-  font-display: swap;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
-  font-display: swap;
 }
 
 /* ===PRIMARY=== */
@@ -174,6 +164,11 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.splide {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .splide__video__wrapper {
@@ -261,13 +256,16 @@ video {
 }
 
 .article-row {
-  height: 2500px; /* Set initial height - will be overriden by JS */
+  /* height: 2500px; Set initial height - will be overriden by JS */
 }
 
 .article-sticky {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   max-width: 15rem; /* Mobile only */
+  /* height: 0px; */
+  /* padding: 0 !important; */
+  /* margin: 0 !important; */
 }
 
 .article-body {
@@ -438,9 +436,10 @@ video {
   .article-body {
     padding-top: 2rem;
     padding-bottom: 5rem;
-    left: 35%;
+    padding-left: 35%;
+    width: 65%;
     top: 0;
-    position: absolute;
+    /* position: absolute; */
   }
 
   /* =TEXT= */

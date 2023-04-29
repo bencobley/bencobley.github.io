@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Resize sections on window resize
-  $(window).resize(resizeSections);
+  // $(window).resize(resizeSections);
   // Run all functions once page is loaded
   $(window).on("load", function () {
     splides();
     resizeSections();
     addNavigation();
     addKeyNavigation();
+    // location.href = location.hash;
   });
 
   function splides() {
@@ -47,7 +48,6 @@ document.addEventListener("DOMContentLoaded", function () {
       splide.mount(window.splide.Extensions);
       splide.on("lazyload:loaded", function () {
         resizeSections();
-        location.href = location.hash;
       });
     }
   }
@@ -103,30 +103,40 @@ document.addEventListener("DOMContentLoaded", function () {
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
-  function resizeSections() {
-    // Calculate total height for each theme-row once page is loaded
-    $(".theme-row").each(function () {
-      let totalHeight = 0;
+  // function resizeSections() {
+  //   // Calculate total height for each theme-row once page is loaded
+  //   $(".theme-row").each(function () {
+  //     let totalHeight = 0;
 
-      // For each article row in column:
+  //     // For each article row in column:
+  //     $(this)
+  //       .find(".article-row")
+  //       .each(function () {
+  //         // Get the height of body
+  //         let bodyHeight = $(this).children(".article-body").eq(0).outerHeight(true);
+  //         // Get the height of article-sticky
+  //         let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
+  //         // Set timeline row height depending on mobile or desktop
+  //         if (($(window).width() > 1000) & ($(window).height() > 600)) {
+  //           $(this).height(bodyHeight);
+  //           totalHeight += bodyHeight;
+  //         } else {
+  //           $(this).height(bodyHeight + stickyHeight);
+  //           totalHeight += bodyHeight + stickyHeight;
+  //         }
+  //       });
+  //     // Set the height of the theme-row to the total height
+  //     $(this).height(totalHeight);
+  //   });
+  // }
+
+  function resizeSections() {
+    $(".article-row").each(function () {
+      let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
       $(this)
-        .find(".article-row")
-        .each(function () {
-          // Get the height of body
-          let bodyHeight = $(this).children(".article-body").eq(0).outerHeight(true);
-          // Get the height of article-sticky
-          let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
-          // Set timeline row height depending on mobile or desktop
-          if (($(window).width() > 1000) & ($(window).height() > 600)) {
-            $(this).height(bodyHeight);
-            totalHeight += bodyHeight;
-          } else {
-            $(this).height(bodyHeight + stickyHeight);
-            totalHeight += bodyHeight + stickyHeight;
-          }
-        });
-      // Set the height of the theme-row to the total height
-      $(this).height(totalHeight);
+        .children(".article-body")
+        .eq(0)
+        .css("margin-top", -stickyHeight + "px");
     });
   }
 
