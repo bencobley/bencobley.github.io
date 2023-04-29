@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     splides();
     resizeSections();
     addNavigation();
-    addKeyNavigation();
-    // location.href = location.hash;
   });
 
   function splides() {
@@ -17,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var splide = new Splide(elms[i], {
         arrows: true,
         perPage: 1,
-        lazyLoad: "sequential",
+        // lazyLoad: "sequential",
         interval: 5000,
         autoplay: "pause",
         intersection: {
@@ -46,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
       splide.mount(window.splide.Extensions);
-      splide.on("lazyload:loaded", function () {
-        resizeSections();
-      });
+      // splide.on("lazyload:loaded", function () {
+      //   resizeSections();
+      // });
     }
   }
 
@@ -103,105 +101,37 @@ document.addEventListener("DOMContentLoaded", function () {
     return elementBottom > viewportTop && elementTop < viewportBottom;
   };
 
-  // function resizeSections() {
-  //   // Calculate total height for each theme-row once page is loaded
-  //   $(".theme-row").each(function () {
-  //     let totalHeight = 0;
-
-  //     // For each article row in column:
-  //     $(this)
-  //       .find(".article-row")
-  //       .each(function () {
-  //         // Get the height of body
-  //         let bodyHeight = $(this).children(".article-body").eq(0).outerHeight(true);
-  //         // Get the height of article-sticky
-  //         let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
-  //         // Set timeline row height depending on mobile or desktop
-  //         if (($(window).width() > 1000) & ($(window).height() > 600)) {
-  //           $(this).height(bodyHeight);
-  //           totalHeight += bodyHeight;
-  //         } else {
-  //           $(this).height(bodyHeight + stickyHeight);
-  //           totalHeight += bodyHeight + stickyHeight;
-  //         }
-  //       });
-  //     // Set the height of the theme-row to the total height
-  //     $(this).height(totalHeight);
-  //   });
-  // }
-
   function resizeSections() {
-    $(".article-row").each(function () {
-      let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
-      $(this)
-        .children(".article-body")
-        .eq(0)
-        .css("margin-top", -stickyHeight + "px");
-    });
-  }
+    // Calculate total height for each theme-row once page is loaded
+    $(".theme-row").each(function () {
+      let totalHeight = 0;
 
-  function addKeyNavigation() {
-    $(document).on("keydown", function (event) {
-      if (event.key === "ArrowDown") {
-        $(".down").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              500
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
+      // For each article row in column:
+      $(this)
+        .find(".article-row")
+        .each(function () {
+          // Get the height of body
+          let bodyHeight = $(this).children(".article-body").eq(0).outerHeight(true);
+          // Get the height of article-sticky
+          let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
+          // Set timeline row height depending on mobile or desktop
+          if ($(window).width() > 1000) {
+            $(this).height(bodyHeight);
+            totalHeight += bodyHeight;
+            $(".article-row").each(function () {
+              let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
+              $(this)
+                .children(".article-body")
+                .eq(0)
+                .css("margin-top", -stickyHeight + "px");
+            });
+          } else {
+            $(this).height(bodyHeight + stickyHeight);
+            totalHeight += bodyHeight + stickyHeight;
           }
         });
-      }
-      if (event.key === "ArrowUp") {
-        $(".up").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              500
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
-      if (event.key === "ArrowRight") {
-        $(".right").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              100
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
-      if (event.key === "ArrowLeft") {
-        $(".left").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              100
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
+      // Set the height of the theme-row to the total height
+      $(this).height(totalHeight);
     });
   }
 });
