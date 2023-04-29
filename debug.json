@@ -283,7 +283,7 @@
             "text2": "<i>Industrial</i> automation technology could also augment <i>home</i> cooking by <b>reducing errors and supporting decision-making</b>. However, designing automation tech for the home is a unique challenge, requiring versatile tools instead of specialised machines. While robot arms could replicate human-kitchen interactions, they are too big and costly for home use. Cameras could act as multi-purpose sensors, but no suitable cooking image datasets are available. With OnionBot, I combined <b> automation and machine vision techniques </b> into a simple countertop robot. Watch the film on <a href=\"https://www.youtube.com/watch?v=W4utRCyo5C4\">YouTube</a>",
             "text3": "I chose to tackle <i>pan-cooking</i> tasks first. A Raspberry Pi camera and thermal camera are mounted above the stove to monitor cooking progress. A <a href=\"https://coral.ai/products/accelerator/\">Coral TPU</a> accelerates classification. A servo motor adjusts the power setting of the induction stove. The project aims to provide <b>automation <i>without</i> adding excessive complexity</b>; instead of replacing the chef, OnionBot augments the chef with multitasking superpowers. The human provides the 'actuation', enhanced by a touchscreen interface 'sous-chef' that offers instructions, reminders, and alerts. OnionBot watches the pan so that the chef can concentrate on culinary creativity. This <b>human-centred approach</b> is a novel concept in cooking robotics research. Read the Thesis on <a href=\"https://arxiv.org/pdf/2011.05039.pdf\">Arxiv</a>.",
             "text4": "Food image classifiers show poor results in real-world scenarios due to the complexity and variability of food images. OnionBot introduces two innovations: Firstly, the <b>fixed camera view above the stove provides a consistent environment</b> for capturing images. Secondly, instead of pursuing a general classification approach, OnionBot adopts a milestone-based method where only<b>key cooking events, 'milestones', are labelled</b> for each recipe. This simplifies the perception challenge by significantly reducing the classification scope (from 1000s to 10s). I created a <b>labelling interface</b> to easily build labelled cooking image datasets by manually selecting each milestone while cooking. I used Google AutoML for streamlined model training, enabling new recipe models to be trained with just a few clicks. Watch the film on <a href=\"https://www.youtube.com/watch?v=W4utRCyo5C4\">YouTube</a>",
-            "text5": "This prototype highlights the potential for automation in home cooking but requires large training datasets to advance further. A fleet of OnionBot devices could crowd-source labelled pan-cooking image data. The fleet-generated dataset, including rich metadata, could drive new research into cooking with AI. <b>I open-sourced OnionBot</b> to encourage further research; Texas-based Hill Yu reached out to me; he has built an OnionBot prototype (pictured above) called <a href=\"https://www.kitchenautomatique.com/\">Kitchen Automatique</a> and fundraised $40K to <b>commercialise the idea</b>. Wishing Kitchen Automatique the best of luck!",
+            "text5": "The prototype highlights the potential for automation in home cooking but requires large training datasets to advance further. A fleet of OnionBot devices could crowd-source labelled pan-cooking image data. The fleet-generated dataset, including rich metadata, could drive new research into cooking with AI. <b>I open-sourced OnionBot</b> to encourage further research; Texas-based Hill Yu reached out to me; he has built an OnionBot prototype (pictured above) called <a href=\"https://www.kitchenautomatique.com/\">Kitchen Automatique</a> and fundraised $40K to <b>commercialise the idea</b>. Wishing Kitchen Automatique the best of luck!",
             "highlights": [
                 "Read Thesis on <a href=\"https://arxiv.org/pdf/2011.05039.pdf\">Arxiv</a>",
                 "Open-sourced on <a href=\"https://github.com/onionbot \">GitHub</a>",
@@ -346,7 +346,7 @@
                     [
                         "<li class='splide__slide'><img data-splide-lazy='static/img/OnionBot_5.png'/></li>"
                     ],
-                    "This prototype highlights the potential for automation in home cooking but requires large training datasets to advance further. A fleet of OnionBot devices could crowd-source labelled pan-cooking image data. The fleet-generated dataset, including rich metadata, could drive new research into cooking with AI. <b>I open-sourced OnionBot</b> to encourage further research; Texas-based Hill Yu reached out to me; he has built an OnionBot prototype (pictured above) called <a href=\"https://www.kitchenautomatique.com/\">Kitchen Automatique</a> and fundraised $40K to <b>commercialise the idea</b>. Wishing Kitchen Automatique the best of luck!"
+                    "The prototype highlights the potential for automation in home cooking but requires large training datasets to advance further. A fleet of OnionBot devices could crowd-source labelled pan-cooking image data. The fleet-generated dataset, including rich metadata, could drive new research into cooking with AI. <b>I open-sourced OnionBot</b> to encourage further research; Texas-based Hill Yu reached out to me; he has built an OnionBot prototype (pictured above) called <a href=\"https://www.kitchenautomatique.com/\">Kitchen Automatique</a> and fundraised $40K to <b>commercialise the idea</b>. Wishing Kitchen Automatique the best of luck!"
                 ]
             ]
         },
@@ -510,7 +510,7 @@
             "duration": "Evenings & Weekends",
             "location": "Home",
             "thanks": "ZK et al.",
-            "text1": "<b>Can we become self-sufficient by automating vegetable growing with robotics? </b><a href=\"https://farm.bot/\">FarmBot</a> is an <b>open-source, automated farming robot</b> for growing food using precision agriculture techniques developed by a team in California. Changeable toolheads on a CNC cartesian gantry system allow FarmBot to sow seeds, water plants and destroy weeds automatically.",
+            "text1": "<b>Can we become self-sufficient by automating vegetable growing with robotics? </b><a href=\"https://farm.bot/\">FarmBot</a> is an <b>open-source, automated farming robot</b> for growing food using precision agriculture techniques developed by a team in California. We built the raised bed, assembled the kit, and programme the growing schedule. Changeable toolheads on a CNC cartesian gantry system allow FarmBot to sow seeds, water plants and destroy weeds automatically.",
             "text2": "This was a lockdown project motivated by the desire to be <b>more self-sufficient</b> by growing our own food. While FarmBot probably won't save money or time, net, over its lifetime, it did get us into vegetable growing! We had a great crop in the first year, but <b>90% of the credit goes to the humans</b> looking after FarmBot.",
             "highlights": [
                 "Automated sowing!",
@@ -518,10 +518,8 @@
                 "Automated weeding!"
             ],
             "skills": [
-                "<span class='skill'>CAD</span>",
                 "<span class='skill'>Fabrication</span>",
-                "<span class='skill'>Raspberry Pi</span>",
-                "<span class='skill'>3D printing</span>"
+                "<span class='skill'>Horticulture</span>"
             ],
             "media1": [
                 "<li class='splide__slide'><img data-splide-lazy='static/img/FarmBot_1a.png'/></li>",
@@ -541,7 +539,7 @@
                         "<li class='splide__slide'><img data-splide-lazy='static/img/FarmBot_1c.png'/></li>",
                         "<li class='splide__slide'><img data-splide-lazy='static/img/FarmBot_1d.png'/></li>"
                     ],
-                    "<b>Can we become self-sufficient by automating vegetable growing with robotics? </b><a href=\"https://farm.bot/\">FarmBot</a> is an <b>open-source, automated farming robot</b> for growing food using precision agriculture techniques developed by a team in California. Changeable toolheads on a CNC cartesian gantry system allow FarmBot to sow seeds, water plants and destroy weeds automatically."
+                    "<b>Can we become self-sufficient by automating vegetable growing with robotics? </b><a href=\"https://farm.bot/\">FarmBot</a> is an <b>open-source, automated farming robot</b> for growing food using precision agriculture techniques developed by a team in California. We built the raised bed, assembled the kit, and programme the growing schedule. Changeable toolheads on a CNC cartesian gantry system allow FarmBot to sow seeds, water plants and destroy weeds automatically."
                 ],
                 [
                     [
@@ -561,7 +559,7 @@
             "subtitle": "Passion Project",
             "duration": "Six Months Full-Time",
             "location": "Home",
-            "thanks": "CW, HB et al.",
+            "thanks": "CW/HB/DC et al.",
             "text1": "<b>Can we rethink the typical van conversion and design a layout that is comfortable for 4 guests?</b>\nInspired by a love of the outdoors, I embarked on a campervan conversion project with friends during our year off (to help get out more). We took an unusual approach to typical van conversions, opting for an <b>aluminium extrusion frame</b> wrapped in lightweight plywood. Sleeping four comfortably meant thinking outside the box. We had three design goals:\n<ul>\n  <li>Four berths and four seats, comfortably.</li>\n  <li>Switching from day to night mode should take seconds, not minutes.</li>\n  <li>We won't get it 100% right first time, so everything should be removable</li>\n</ul>",
             "text2": "We created a <b>first-of-its-kind</b> (as far as we know) bed sliding mechanism to allow us to include both <b>four berths and four seats</b>, comfortably. The top bed slides over the kitchen area when 'night mode' is deployed. The end result is extremely comfortable, but comes with a significant increase in complexity. Check out the assembly timelapse and demonstration in the video below!",
             "text3": "For power, I built a fully off-grid solar system, so that the van never needs to be plugged in. I learnt how to spec solar panels, batteries, controllers etc. through online tutorials and <b>assembled the system myself</b> (see timelapse above). Specs:\n\n<ul>\n  <li>1200W Inverter for 240V mains power</li>\n  <li>100Ah 12V Lithium battery</li>\n  <li>440W Domestic Solar Panel</li>\n  <li>30A charger from vehicle alternator</li>\n  <li>Bluetooth connectivity to phone application</li>\n  <li>LED lights, 12V phone chargers, fridge, water pump etc.</li>\n</ul>\n\nBuilding a campervan was extremely fulflling, but far more of a time investment than I could ever have imagined. <b>Proceed with caution!</b>",
