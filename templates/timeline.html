@@ -6,7 +6,7 @@
 {% for theme, articles in articles_by_theme.items() %}
 <!-- THEME -->
 <div class="column">
-  <div class="row theme-row">
+  <div class="row theme-row" id="{{ theme }}">
     <div class="column theme-column">
       <div class="theme-sticky"><a class="arrow up">&#60;</a>{{ theme }}<a class="arrow down">&#62;</a></div>
     </div>
@@ -35,7 +35,7 @@
           >
           <span class="thanks">{{ article['thanks'] }}</span>
         </div>
-        <div class="article-body" id="{{ theme }}">
+        <div class="article-body">
           <span class="title">{{ article['title'] }}</span>
           {% for (media, text) in article['body'] %}
           <div class="splide">
