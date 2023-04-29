@@ -1,12 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Resize sections on window resize
-  $(window).resize(resizeSections);
+  // $(window).resize(resizeSections);
   // Run all functions once page is loaded
   $(window).on("load", function () {
     splides();
     resizeSections();
     addNavigation();
-    addKeyNavigation();
   });
 
   function splides() {
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var splide = new Splide(elms[i], {
         arrows: true,
         perPage: 1,
-        lazyLoad: "sequential",
+        // lazyLoad: "sequential",
         interval: 5000,
         autoplay: "pause",
         intersection: {
@@ -45,10 +44,9 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
       splide.mount(window.splide.Extensions);
-      splide.on("lazyload:loaded", function () {
-        resizeSections();
-        location.href = location.hash;
-      });
+      // splide.on("lazyload:loaded", function () {
+      //   resizeSections();
+      // });
     }
   }
 
@@ -117,9 +115,16 @@ document.addEventListener("DOMContentLoaded", function () {
           // Get the height of article-sticky
           let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
           // Set timeline row height depending on mobile or desktop
-          if (($(window).width() > 1000) & ($(window).height() > 600)) {
+          if ($(window).width() > 1000) {
             $(this).height(bodyHeight);
             totalHeight += bodyHeight;
+            $(".article-row").each(function () {
+              let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
+              $(this)
+                .children(".article-body")
+                .eq(0)
+                .css("margin-top", -stickyHeight + "px");
+            });
           } else {
             $(this).height(bodyHeight + stickyHeight);
             totalHeight += bodyHeight + stickyHeight;
@@ -127,71 +132,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       // Set the height of the theme-row to the total height
       $(this).height(totalHeight);
-    });
-  }
-
-  function addKeyNavigation() {
-    $(document).on("keydown", function (event) {
-      if (event.key === "ArrowDown") {
-        $(".down").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              500
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
-      if (event.key === "ArrowUp") {
-        $(".up").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              500
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
-      if (event.key === "ArrowRight") {
-        $(".right").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              100
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
-      if (event.key === "ArrowLeft") {
-        $(".left").each(function () {
-          if ($(this).isInViewport()) {
-            // Scroll to the target anchor
-            $("html, body").animate(
-              {
-                scrollTop: $($(this).attr("href")).offset().top,
-              },
-              100
-            );
-            // Update the URL hash without reloading the page
-            history.pushState(null, null, $(this).attr("href"));
-          }
-        });
-      }
     });
   }
 });
