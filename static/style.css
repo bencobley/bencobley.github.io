@@ -40,11 +40,13 @@ html {
   font-family: "space-grotesk";
   src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "space-grotesk";
   src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -52,23 +54,27 @@ html {
   src: url("fonts/SpaceMono-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic, oblique;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "space-mono";
   src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "space-mono";
   src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
   font-style: italic, oblique;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "space-mono";
   src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -76,23 +82,27 @@ html {
   src: url("fonts/AtkinsonHyperlegible-BoldItalic.ttf") format("truetype");
   font-weight: bold;
   font-style: italic, oblique;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
   font-weight: bold;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Italic.ttf") format("truetype");
   font-style: italic, oblique;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "hyperlegible";
   src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 /* ===PRIMARY=== */
