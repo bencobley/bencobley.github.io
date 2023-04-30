@@ -1,0 +1,104 @@
+{% extends 'base.html' %} {% block container %}
+
+<!-- This timeline.html file extends the base.html file, and is where the timeline content is generated. 
+  The Jinja2 templating language is used to generate the HTML content from the data in the CSV files. -->
+
+<!-- Homepage -->
+<div class="column" id="Home">
+  <div class="homepage">
+    <div class="column me" style="width: 15%">
+      <a href="https://www.linkedin.com/in/bennetcobley/" target="_blank" rel="noopener noreferrer"><img src="static/img/me.png" /></a>
+    </div>
+    <div class="column homepage-text">
+      <span class="text">
+        Hey, I'm Ben! 👋 I am an <b>engineer & maker</b>. <br /><br />
+        I work at the intersection of hardware and software, somewhere between a designer / developer / creative technologist. Playing the
+        <b>wildcard</b> role in diverse teams suits my interdisciplinary skill set. <br /><br />
+        I studied at Imperial College, and interned at <b>Google X, Dyson & Brompton</b>. I got to work on some
+        <a href="https://www.bencobley.com/#Experience">great projects</a>. More recently, I worked on the world’s waste problem @
+        <a href="https://www.bencobley.com/#TrueCircle">TrueCircle AI</a>. <br /><br />
+        I am due to start a new role in the climate-tech space at the end of June, but I am excited to explore alternative opportunities in the
+        Creative Lab team <b>before then!</b> <br /><br />
+        Outside work, I love <a href="#Projects">making things with friends</a>. I am currently taking some time off to travel in the van I converted,
+        but I'm always available to chat. <a href="mailto:ben.cobley@gmail.com">Say hello!</a>.
+      </span>
+    </div>
+  </div>
+  <!-- <a href="#Experience" class="homepage-arrow">&#62;</a> -->
+</div>
+
+{% for theme, articles in articles_by_theme.items() %}
+
+<!-- THEME -->
+<div class="column">
+  <div class="row theme-row" id="{{ theme }}">
+    <div class="column theme-column">
+      <div class="theme-sticky"><a class="arrow up">&#60;</a>{{ theme }}<a class="arrow down">&#62;</a></div>
+    </div>
+    <!-- ARTICLES -->
+    <div class="column article-column">
+      {% for article_ID, article in articles.items() %}
+      <!-- ARTICLE -->
+      <div class="row article-row" id="{{ article_ID }}">
+        <div class="article-sticky">
+          <span class="date"><a class="arrow left">&#60;</a>{{ article['date'] }}<a class="arrow right">&#62;</a></span>
+          <span class="shorttitle">{{ article['shorttitle'] }}</span>
+          <span class="subtitle">{{ article['subtitle'] }}</span>
+          <span class="skills">
+            {% for skill in article['skills'] %}
+            <span class="skill">{{ skill }}</span>
+            {% endfor %}
+          </span>
+          <span class="duration">{{ article['duration'] }}</span>
+          <span class="location">{{ article['location'] }}</span>
+          <span class="highlights">
+            <ul>
+              {% for highlight in article['highlights'] %}
+              <li>{{ highlight }}</li>
+              {% endfor %}
+            </ul></span
+          >
+          <span class="thanks">{{ article['thanks'] }}</span>
+        </div>
+        <div class="article-body">
+          <span class="title">{{ article['title'] }}</span>
+          {% for (media, text) in article['body'] %}
+          <div class="splide">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for item in media %} {{ item }} {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <span class="text">{{ text }}</span>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<!-- Footer -->
+<div class="column" id="End">
+  <div class="footer">
+    <span class="text">
+      ______ <br />
+      &copy; Ben Cobley
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <br />
+      Fork my template on
+      <a href="https://github.com/bencobley/bencobley.github.io">GitHub</a>
+      <br />
+      This site is generated using a
+      <a href="https://docs.google.com/spreadsheet/ccc?key=1YLPiKODcjiSdY-z6nUn9SXbsGM_wfrvtsDITZ2rzNA4">Google Sheet</a>
+      <br />
+      Made with ❤️ from scratch in
+      <a href="https://en.wikipedia.org/wiki/International_orange">International Orange</a>
+    </span>
+  </div>
+</div>
+{% endblock %}
