@@ -30,7 +30,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
   font-size: calc(14.5px + 0.390625vw);
 }
 
