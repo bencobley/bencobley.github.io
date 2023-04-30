@@ -3,6 +3,24 @@
 <!-- This timeline.html file extends the base.html file, and is where the timeline content is generated. 
   The Jinja2 templating language is used to generate the HTML content from the data in the CSV files. -->
 
+<!-- Homepage -->
+<div class="column" id="Home">
+  <div class="homepage">
+    <div class="me">
+      <a href="https://www.linkedin.com/in/bennetcobley/" target="_blank" rel="noopener noreferrer"><img src="static/img/me.png" /></a>
+    </div>
+    <span class="text">
+      Hey! 👋 I’m Ben. I am a <b>designer, engineer & maker</b>. I am starting a new role this summer - stay tuned! This site is a record of my
+      projects & work. Before joining <a href="#TrueCircle">TrueCircle AI</a>, I studied at <b>Imperial College</b>, where I developed a
+      <a href="#Percussion">tissue characterisation device</a> and <a href="#OnionBot">cooking robots</a> [amongst other things]! During the degree, I
+      interned at <b>Google X, Dyson & Brompton</b>, and got to work on some <a href="#Experience">great projects with great people</a>. Outside work,
+      I love <a href="#Projects">building stuff with friends</a>. Interested in making new things / making a positive impact on earth?
+      <a href="https://www.linkedin.com/in/bennetcobley/" target="_blank" rel="noopener noreferrer">Say hello!</a>.
+    </span>
+    <a href="#Experience" class="homepage-arrow">&#62;</a>
+  </div>
+</div>
+
 {% for theme, articles in articles_by_theme.items() %}
 <!-- THEME -->
 <div class="column">
@@ -53,4 +71,26 @@
     </div>
   </div>
 </div>
-{% endfor %}{% endblock %}
+{% endfor %}
+<!-- Footer -->
+<div class="column" id="End">
+  <div class="footer">
+    <span class="text">
+      ______ <br />
+      &copy; Ben Cobley
+      <script>
+        document.write(new Date().getFullYear());
+      </script>
+      <br />
+      Fork my template on
+      <a href="https://github.com/bencobley/bencobley.github.io">GitHub</a>
+      <br />
+      This site is generated using a
+      <a href="https://docs.google.com/spreadsheet/ccc?key=1YLPiKODcjiSdY-z6nUn9SXbsGM_wfrvtsDITZ2rzNA4">Google Sheet</a>
+      <br />
+      Made with ❤️ from scratch in
+      <a href="https://en.wikipedia.org/wiki/International_orange">International Orange</a>
+    </span>
+  </div>
+</div>
+{% endblock %}
