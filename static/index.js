@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
       var splide = new Splide(elms[i], {
         arrows: true,
         perPage: 1,
-        // lazyLoad: "sequential",
+        lazyLoad: "sequential",
         interval: 5000,
         autoplay: "pause",
         intersection: {
@@ -51,9 +51,10 @@ document.addEventListener("DOMContentLoaded", function () {
         },
       });
       splide.mount(window.splide.Extensions);
-      // splide.on("lazyload:loaded", function () {
-      //   resizeSections();
-      // });
+      splide.on("lazyload:loaded", function () {
+        resizeArticles();
+        resizeThemes();
+      });
     }
   }
 
