@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     resizeArticles();
     resizeThemes();
     addNavigation();
-    homepage();
   });
 
   // Hide first up arrow
@@ -104,10 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
     $(".article-row").each(function () {
       // console.log($(this).children(".article-sticky"));
       let stickyHeight = $(this).children(".article-sticky").eq(0).outerHeight(true);
-      $(this)
-        .children(".article-body")
-        .eq(0)
-        .css("margin-top", -stickyHeight + "px");
+      // Set margin if page width is greater than 1000px
+      if ($(window).width() > 1000) {
+        $(this)
+          .children(".article-body")
+          .eq(0)
+          .css("margin-top", -stickyHeight + "px");
+      }
     });
   }
 
@@ -124,6 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .children(".article-row")
             .each(function () {
               totalHeight += $(this).children(".article-body").eq(0).outerHeight(true);
+              if ($(window).width() < 999) {
+                totalHeight += $(this).children(".article-sticky").eq(0).outerHeight(true);
+              }
             });
         });
       $(this).height(totalHeight);
