@@ -1,3 +1,7 @@
+# CUSTOM
+content.csv
+debug.json
+
 # UNIX
 .DS_Store
 
@@ -154,5 +158,3 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-content.csv
-debug.json
