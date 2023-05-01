@@ -52,7 +52,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       splide.mount(window.splide.Extensions);
       splide.on("lazyload:loaded", function () {
-        resizeSections();
+        resizeArticles();
+        resizeThemes();
       });
     }
   }
