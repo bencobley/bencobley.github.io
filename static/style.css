@@ -33,7 +33,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: calc(15px + 0.390625vw);
+  font-size: calc(14.5px + 0.390625vw);
 }
 
 /* ===FONTS=== */
@@ -125,6 +125,33 @@ ul {
   margin-top: 0.5rem;
 }
 
+code {
+  font-family: monospace;
+  font-size: inherit;
+}
+
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: var(--quite-grey);
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: 0.1rem 0.3rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+pre code {
+  display: block;
+  background: var(--quite-grey);
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  max-width: 100%;
+  min-width: 100px;
+  padding: 0;
+}
+
 /* ===SECONDARY=== */
 
 .row {
@@ -188,10 +215,6 @@ video {
 
 /* ===HOME=== */
 
-/* .home {
-  font-size: 1.1rem;
-} */
-
 .me {
   position: relative;
   top: 0.4rem;
@@ -202,9 +225,6 @@ video {
 }
 
 /* ===THEMES=== */
-
-.theme-row {
-}
 
 .theme-column {
   width: 5%;
@@ -233,9 +253,6 @@ video {
 
 .article-column {
   width: 92%;
-}
-
-.article-row {
 }
 
 .article-sticky {
@@ -296,7 +313,7 @@ video {
 .subtitle {
   display: block;
   margin-bottom: 1rem;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.3;
   font-family: "space-grotesk", sans-serif;
   font-weight: bold;
