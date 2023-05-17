@@ -389,21 +389,18 @@ video {
   font-style: italic;
 }
 
-.location {
-}
-
-.highlights {
+.bullets {
   line-height: 1.5;
   font-family: "hyperlegible", sans-serif;
   font-style: italic;
   font-weight: normal;
 }
 
-.highlights a::after {
+.bullets a::after {
   content: ">>";
 }
 
-.highlights a:hover {
+.bullets a:hover {
   text-decoration: none;
 }
 

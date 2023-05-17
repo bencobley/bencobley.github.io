@@ -29,11 +29,11 @@
             <span class="skill">{{ skill }}</span>
             {% endfor %}
           </span>
-          <b>Highlights:</b>
-          <span class="highlights">
+          <span class="heading">{{ article['heading'] }}</span>
+          <span class="bullets">
             <ul>
-              {% for highlight in article['highlights'] %}
-              <li>{{ highlight }}</li>
+              {% for bullet in article['bullets'] %}
+              <li>{{ bullet }}</li>
               {% endfor %}
             </ul>
           </span>
