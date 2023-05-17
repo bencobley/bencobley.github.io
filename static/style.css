@@ -275,20 +275,18 @@ video {
 /* ===THEMES=== */
 
 .theme-column {
-  width: 5%;
-  padding-right: 5%;
+  width: 6%;
+  padding-right: 4%;
 }
 
 .theme-sticky {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 2.5rem;
   position: -webkit-sticky;
   position: sticky;
   width: 100%;
   top: 0;
   left: 0;
   color: var(--very-grey);
-  /* font-size: 1.5rem; */
   font-family: "space-mono", monospace;
   font-weight: bold;
   white-space: nowrap;
@@ -304,12 +302,18 @@ video {
 }
 
 .article-sticky {
-  max-width: 15rem; /* Mobile only */
   color: var(--very-grey);
   font-weight: bold;
   font-family: "space-grotesk", sans-serif;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  width: 30%;
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .article-sticky > span {
@@ -318,14 +322,17 @@ video {
 }
 
 .article-body {
-  padding-top: 2.5rem;
+  padding-top: 2rem;
   padding-bottom: 5rem;
+  padding-left: 37.5%;
+  width: 62.5%;
+  /* top: 0; */
 }
 
 /* ===TEXT=== */
 
 .title {
-  display: none; /* Hide on mobile */
+  display: block; /* Show on desktop only */
   font-size: 3.75rem; /* Overwrites h2 size */
   margin-top: 0;
   margin-bottom: 3rem;
@@ -345,12 +352,13 @@ video {
 }
 
 .shorttitle {
+  display: none; /* Hide on desktop */
   font-size: 3rem; /* Overwrites h2 size */
   margin-top: 0;
-  margin-bottom: 3rem;
 }
 
 .date {
+  font-size: 3.75rem; /* Overwrites h2 size */
   font-style: italic;
   color: var(--very-grey);
   margin-top: 0;
@@ -410,46 +418,41 @@ video {
 
 /* ===DESKTOP-ONLY=== */
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (max-width: 999px) {
   /* =THEMES= */
 
   .theme-sticky {
-    padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   /* =ARTICLES= */
 
   .article-sticky {
-    padding-top: 2rem;
-    padding-bottom: 5rem;
-    width: 30%;
-    display: block;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    left: 0;
+    position: static;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    max-width: 15rem; /* Mobile only */
   }
 
   .article-body {
-    padding-top: 2rem;
     padding-bottom: 5rem;
-    padding-left: 37.5%;
-    width: 62.5%;
-    top: 0;
+    padding-left: 0;
+    width: 100%;
   }
 
   /* =TEXT= */
 
   .title {
-    display: block; /* Show on desktop only */
+    display: none; /* Hide on mobile */
   }
 
   .shorttitle {
-    display: none; /* Hide on desktop */
+    display: block; /* Show on desktop only */
   }
 
   .date {
-    font-size: 3.75rem; /* Overwrites h2 size */
+    font-size: 2rem; /* Overwrites h2 size */
   }
 }
