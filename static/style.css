@@ -166,7 +166,8 @@ a {
   letter-spacing: -0.07rem;
 }
 
-ul {
+ul,
+ol {
   margin-left: 2rem;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
