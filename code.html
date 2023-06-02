@@ -56,26 +56,28 @@
               <h3 class="subtitle"></h3>
 
               <span class="text"
-                ><img class="me" src="static/img/me.png" /> Hey! Here's a deep dive into a technical project, <b>OnionBot:</b><br /><br />
-                <a href="https://github.com/bencobley">Skip to GitHub</a>
+                ><img class="me" src="static/img/me.png" /> Hey! Here's a deep dive into a technical project, <b>OnionBot:</b>
                 <h4>Project Brief</h4>
                 In AI-assisted cooking, prior research focused on <i>replacing</i> home chefs with robotics, which loses the joy of cooking.
                 Conversely, my brief was to use computer vision to empower users to follow new recipes more effectively. <b>Measure of success:</b> a
                 minimally-invasive device that provides useful nudges and interventions.
 
                 <h4>Technical Challenges</h4>
+                The main software challenges tackled:
                 <ol>
-                  <li><i>Cooking is a broad challenge:</i> narrowing scope and encoding recipes</li>
-                  <li><i>Training data isn't available:</i> building high-quality recipe datasets</li>
-                  <li><i>System Architecture:</i> building a labelling and training pipeline</li>
-                  <li><i>Demistifying AI:</i> Explaining the system to the open-source community</li>
+                  <li><a href="#1">Cooking is a broad challenge</a> Narrowing project scope</li>
+                  <li><a href="#2">Training data isn't available</a> Building recipe datasets</li>
+                  <li><a href="#3">Building a System Architecture from scratch</a></li>
+                  <li><a href="#4">Demistifying AI</a> Explaining to the open-source community</li>
                 </ol>
 
                 <h4>Collaboration</h4>
                 I can't share other collaborative codebases due to NDAs. This project is a response to an individual dissertation brief, I'll
                 acknowledge it would benefit from some diversity of ideas and expertise! For some more collaborative side-projects, check out
                 <a href="https://github.com/mimireyburn/WTHR">WTHR</a> and <a href="https://github.com/tomcobley/inky-spotify">Inky</a> <br /><br />
-                <a href="OnionBot">Continue</a></span
+                <a href="#OnionBot">Continue</a> <br />
+                <a href="https://github.com/bencobley">Skip to GitHub</a> <br />
+                <a href="https://bencobley.com/5">All other projects</a></span
               >
             </div>
           </div>
@@ -145,10 +147,10 @@
               </div>
 
               <span class="text"
-                ><h4 id="1">Narrowing scope</h4>
+                ><h4 id="1">Narrowing scope & encoding recipes</h4>
 
-                I chose to tackle <i>pan-cooking</i> tasks first. Food image classifiers show poor results in real-world scenarios due to the
-                complexity and variability of food images. To narrow the scope:
+                Food image classifiers show poor results in real-world scenarios due to the complexity and variability of food images. To narrow the
+                scope:
                 <ol>
                   <li>The <b>fixed camera view above the stove</b> provides a consistent environment for capturing images.</li>
                   <li>
