@@ -1,10 +1,7 @@
 {% extends 'base.html' %} {% block container %}
-
 <!-- This timeline.html file extends the base.html file, and is where the timeline content is generated. 
   The Jinja2 templating language is used to generate the HTML content from the data in the CSV files. -->
-
 {% for theme, articles in articles_by_theme.items() %}
-
 <!-- THEME -->
 <div class="column">
   <div class="row theme-row" id="{{ theme }}">
@@ -23,7 +20,6 @@
           <h2 class="shorttitle">{{ article['shorttitle'] }}</h2>
           <h4 class="duration">{{ article['duration'] }}</h4>
           <span class="location">{{ article['location'] }}</span>
-
           <span class="skills">
             {% for skill in article['skills'] %}
             <span class="skill">{{ skill }}</span>
@@ -42,7 +38,6 @@
         <div class="article-body">
           <h2 class="title">{{ article['title'] }}</h2>
           <h3 class="subtitle">{{ article['subtitle'] }}</h3>
-
           {% for (media, text) in article['body'] %} {% if media[0] != "" %}
           <div class="splide">
             <div class="splide__track">
