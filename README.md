@@ -41,7 +41,7 @@ File > Make A Copy
 
 Do not edit `static/index.html`, it will be overwritten by the dynamic generation in `app.py`.
 
-Edit the URL in `app.py` to your Google Sheets URL. Keep the `&output=csv&sheet=content` at the end of the URL.
+Edit the URL in `app.py` to your Google Sheets URL. Keep the `/export?gid=0&format=csv` at the end of the URL. Use `GID` to reference other sheets in the same file.
 
 Run `app.py` to generate your content from the Google Sheet (generated using [Jinja2](https://palletsprojects.com/p/jinja/) in `templates/timeline.html`).
 

@@ -4,7 +4,8 @@ from markupsafe import Markup
 from json import dump
 from requests import get
 
-INDEX = "https://docs.google.com/spreadsheet/ccc?key=1YLPiKODcjiSdY-z6nUn9SXbsGM_wfrvtsDITZ2rzNA4&output=csv&sheet=content"
+
+INDEX = "https://docs.google.com/spreadsheets/d/1YLPiKODcjiSdY-z6nUn9SXbsGM_wfrvtsDITZ2rzNA4/export?gid=0&format=csv"
 
 app = Flask(__name__)
 
