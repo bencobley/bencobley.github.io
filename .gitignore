@@ -2,6 +2,9 @@
 content.csv
 debug.json
 
+# VSCODE
+.vscode
+
 # UNIX
 .DS_Store
 
